@@ -8,17 +8,58 @@
 	<!-- load theme file for your application -->
 	<link rel="stylesheet" href="css/style.css">
 </head>
+
+
+
 <body>
 	<div class="ui-page ui-page-active" id="main">
+	<!-- 
 		<header class="ui-header">
-			<h2 class="ui-title">TAU Basic</h2>
+			<h2 class="ui-title">Hello World</h2>
 		</header>
-		<div class="ui-content content-padding">
-			<p>Hello! </p>
+		<div class="ui-content content-padding" id="contentArea">
+			<p>This is content area</p>
 		</div>
+		
+		<div class="ui-content content-padding" id="contentArea">
+			<ul class="ui-listview">
+				<li><a href="#">List Item 1</a></li>
+				<li><a href="second.html">List Item 2</a></li>
+				<li><a href="#">List Item 3</a></li>
+				<li><a href="#">List Item 4</a></li>
+				<li><a href="#">List Item 5</a></li>
+			</ul>
+		</div>
+	-->
+	
+	<!-- clock using canvas -->
+	
+	<canvas id="canvas" width="300" height="300" style="background-color: #333"></canvas>
+	
+	
 	</div>
+	
+	
 	<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
 	<script src="app.js"></script>
 	<script src="lowBatteryCheck.js"></script>
+	<script src="circle-helper.js"></script>
+	
+	<script>
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	var radius = canvas.height / 2;
+	ctx.translate(radius, radius);
+	radius = radius * 0.90
+	drawClock();
+	
+	function drawClock() {
+	    ctx.arc(0, 0, radius, 0 , 2*Math.PI);
+	    ctx.fillStyle = "white";
+	    ctx.fill();
+	}
+	</script>
+	
+	
 </body>
 </html>
