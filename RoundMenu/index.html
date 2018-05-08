@@ -34,7 +34,7 @@
 	
 	<!-- clock using canvas -->
 	
-	<canvas id="canvas" width="300" height="300" style="background-color: #333"></canvas>
+	<canvas id="canvas" width="360" height="360" style="background-color: #333"></canvas>
 	
 	
 	</div>
@@ -45,6 +45,16 @@
 	<script src="lowBatteryCheck.js"></script>
 	<script src="circle-helper.js"></script>
 	
+	<!-- <script>
+	function onScreenStateChanged(previousState, changedState) {
+    		console.log('Screen state changed from' + previousState + 'to' + changedState);
+	}
+	tizen.power.setScreenStateChangeListener(onScreenStateChanged);
+	tizen.power.release('SCREEN');
+	tizen.power.request('SCREEN', 'SCREEN_NORMAL')；
+	</script> -->
+	
+	
 	<script>
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
@@ -54,10 +64,31 @@
 	drawClock();
 	
 	function drawClock() {
-	    ctx.arc(0, 0, radius, 0 , 2*Math.PI);
-	    ctx.fillStyle = "white";
+		drawFace(ctx, radius);
+	}
+	
+	function drawFace(ctx, radius){
+		var grad;
+		
+		ctx.beginPath();
+		ctx.arc(0, 0, radius, 0 , 2*Math.PI);
+		ctx.fillStyle = "white";
+	    ctx.fill();
+	    
+	    grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+	    grad.addColorStop(0, '#333');
+	    grad.addColorStop(0.5, 'white');
+	    grad.addColorStop(1, '#333');
+	    ctx.strokeStyle = grad;
+	    ctx.lineWidth = radius*0.1;
+	    ctx.stroke();
+	
+	    ctx.beginPath();
+	    ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+	    ctx.fillStyle = '#333';
 	    ctx.fill();
 	}
+	
 	</script>
 	
 	
