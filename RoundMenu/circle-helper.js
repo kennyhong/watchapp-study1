@@ -35,6 +35,9 @@
 					}
 				}
 			}
+			
+			
+			
 		});
 
 		/**
@@ -54,5 +57,16 @@
 				listHelper = [];
 			}
 		});
+		
+		
+		/**
+		 * add event to button 1
+		 */
+		document.addEventListener("pageshow", function(){
+			
+			
+		});
+		
+		
 	}
 }(tau));

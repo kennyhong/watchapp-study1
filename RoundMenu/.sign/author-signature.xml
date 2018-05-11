@@ -8,7 +8,7 @@
 </Reference>
 <Reference URI="circle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>f4EfJXAUKJc+6JyofqyTVoIyuSGhchJdQS/aIloWKBI=</DigestValue>
+<DigestValue>nATx3EGUmpHnBcOvKJ4gCFcecRPO8S1wDT/gyb8PDmE=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -16,7 +16,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>JzZ3q6nYUT9Q/Nm6fF530L/D9ttheooMpjCFANU45BY=</DigestValue>
+<DigestValue>UPSHs/7uS3lVlVcpd9PipFMqDZPyn6Yqj1vc2kYsf8Y=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -24,7 +24,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BJE3yfpUhggzpQ0Is9KGOGnzHhgFoMDeTThObbX4FUg=</DigestValue>
+<DigestValue>E/0vncXSPQQzznH3GoHHw4iGyoXygU/yuaLB2PZAJMA=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1163,11 +1163,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-MNDC+BkJlLOdks74sqEBvcJOO7Za/qNCZjj6D4wZBxJYrM5jJAlLW1vimQrJUWhNs99YQtwSoSsd
-/+NP6Kd+4pKmZuesh0x96bScyW08VTwgiXbgWTFLZO0DjXIuh+1BiHJho0LyxFMcmNVg64aGdS+t
-94IrqtMQrKxDU7YMZ8n0WuAD+akPhu2FqK6YZu7orrkD1mujyWuR38Vv5ovGHBrGXr/fStxCzTZY
-ckdP/FRPIwDi9yDZUBDcDr1YOkYG9fC2pAv/L/DaD2AevCCK6hinVfw9qQs77Fy5+GcxxbuPZVqj
-he86Ubp4R6zQAdid1m5y2eKjMC2Y8J/Rt1AZyw==
+NYD5KW0midbu7f7kKxd2dyDtmNfTg9rt+WS3t8dYRWPpuNEI7qfK4GAnVJOA2wxT2F3CcLFDvMK/
+AnGTuU3Rlyv8Ri+Pj0LAGyTxtP4G6Bfx73r+pupVjuk5/ojfGCAys6ZgeHKaZVsfP4FEC4ouG+y+
+oS48oQm0fad1Y4lCVCo7ziXZvWsz+J+PtzjgnyWq5RR/j1lKau0pY6kqg4BcDHmMEjaZWl3M+NyU
+gEFwJOmB6EtM2i2XIat07B3vmPmJ018S4/MOwYdCSCrJjUAclgHtYSfI960oGVefM1eYbSBKzNmQ
+WxffXVs3Km9cMq6Hx5YObSzlDF18SStWu/lkRw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

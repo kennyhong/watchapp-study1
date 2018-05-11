@@ -31,3 +31,8 @@ body {
 #contentArea {
 	color: #8be3d1;
 }
+
+#button1 {
+	margin-left: 100px;
+	margin-bottom: 100px;
+}
