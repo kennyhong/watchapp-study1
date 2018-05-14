@@ -37,9 +37,9 @@
 <!-- 	<canvas id="canvas" width="360" height="360" style="background-color: #333"></canvas> -->
 	
 	<!-- add a button -->
-	<div>
+<!-- 	<div>
 		<button id="button1" data-role="button">Press button</button>
-	</div>
+	</div> -->
 	
 	</div>
 	
@@ -48,22 +48,7 @@
 	<script src="app.js"></script>
 	<script src="lowBatteryCheck.js"></script>
 	<script src="circle-helper.js"></script>
-	
-	
-	<script>
-	tau.event.one(document, "pageshow", function(){
-	
-		$("#main").on("swipeleft", function(event){
-			tau.changePage("second.html");
-		});
-	
-		$("#button1").on("click", function(){
-			tau.changePage("second.html");
-		});
-	})
-	
-	
-	</script>
+
 	
 	<!-- <script>
 	function onScreenStateChanged(previousState, changedState) {

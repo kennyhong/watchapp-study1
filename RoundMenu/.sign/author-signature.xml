@@ -2,6 +2,10 @@
 <SignedInfo>
 <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+<Reference URI=".DS_Store">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>BSTsld/uPL5L0Uah1scyeXtZIsdne3+NNTjh7nDpEes=</DigestValue>
+</Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>6Sm6ZkoqwlnVFxbFM/jOG+ow9AeHgbzCh/nC4J96mr0=</DigestValue>
@@ -1163,11 +1167,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-NYD5KW0midbu7f7kKxd2dyDtmNfTg9rt+WS3t8dYRWPpuNEI7qfK4GAnVJOA2wxT2F3CcLFDvMK/
-AnGTuU3Rlyv8Ri+Pj0LAGyTxtP4G6Bfx73r+pupVjuk5/ojfGCAys6ZgeHKaZVsfP4FEC4ouG+y+
-oS48oQm0fad1Y4lCVCo7ziXZvWsz+J+PtzjgnyWq5RR/j1lKau0pY6kqg4BcDHmMEjaZWl3M+NyU
-gEFwJOmB6EtM2i2XIat07B3vmPmJ018S4/MOwYdCSCrJjUAclgHtYSfI960oGVefM1eYbSBKzNmQ
-WxffXVs3Km9cMq6Hx5YObSzlDF18SStWu/lkRw==
+rksbdfJxmaiZwi4ZcWTfROWpAVpxRdpOQoyfsPzk6DjFodEu7t+89TmaeiFxvp0Wv5/Np095/GWh
+AZBcVs3Tr7/JFKQKVjW82VrQlKTw8K5KA6UDtlXMpOjnZ1I3NbYLKPodk7qO9kIfmMM/cnQUieNH
++pbYMeH3QxLt8Xz4Lq9v2f3MzglzLarHp+iJZL3xU0rah5nx5X5PdmgULt6wLN9cgpkwXunNDKgX
+FSaQfZLGWh9dQlBEaqF1WcJa8Nw2sa4pyp8IZty+0sw/bKMouT5betZ0OkJInPHX1/1aW1WQg5s1
+O0c6dLs/v5O3hYXp+msBubMg/K2KTKnZaHppFg==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
