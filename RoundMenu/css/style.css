@@ -32,7 +32,50 @@ body {
 	color: #8be3d1;
 }
 
-#button1 {
-	margin-left: 100px;
-	margin-bottom: 100px;
+#slider{
+	border-radius: 5px;
+	background: #E0E0E0;
+	background: linear-gradient(left top, #E0E0E0, #EEEEEE);
+	width: 310px;
+	height: 15px;
+	margin: 5px;
+	margin-top: 100px;
+
+	transition-property: background;
+	transition-duration: 10s;
 }
+
+#thumb{
+	width: 10px;
+	height: 25px;
+	border-radius: 3px;
+	position: relative;
+	left: 10px;
+	top: -5px;
+	background: #A8A8A8;
+	cursor: pointer;
+
+	transition-property: width, height;
+	transition: all 3s cubic-bezier(0.25, 1.5, 0.75, 1.5);
+}
+
+#thumb.growing{
+	width: 20px;
+	height: 50px;
+}
+
+.circle{
+	transition-property: width, height, margin-left, margin-top;
+	transition-duration: 2s;
+	position: fixed;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: red;
+	border-radius: 50%;
+}
+
+progress{
+	width: 20%;
+	height: 20px;
+}
+
+
