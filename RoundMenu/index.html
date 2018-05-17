@@ -5,6 +5,7 @@
 	<title>Circular UI</title>
 	<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
 	<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<!-- load theme file for your application -->
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,12 +13,24 @@
 
 
 <body>
-	<div class="ui-page ui-page-active" id="main">
-		<div>
-			<progress id="progressId"></progress>
+	<div class="ui-page ui-page-active circle-page" id="main">
+		<div id='ss_menu'>
+			<div> <i class="fa fa-facebook-official"></i> </div>
+			<div> <i class="fa fa-twitter"></i> </div>
+		  	<div> <i class="fa fa-linkedin"></i> </div>
+		  	<div> <i class="fa fa-google-plus"></i> </div>
+		  	<div> <i class="fa fa-apple"></i> </div>
+		  	<div> <i class="fa fa-bitcoin"></i> </div>
+		  	<div> <i class="fa fa-android"></i> </div>
 		</div>
-	
+
+		<div id='coord'>
+			<div id="hori"></div>
+			<div id="vert"></div>
+		</div>
+	</div>
 	<!--<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>-->
+	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script src="app.js"></script>
 	<!--<script src="lowBatteryCheck.js"></script> -->
 	<!--<script src="circle-helper.js"></script> -->

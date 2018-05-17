@@ -26,43 +26,36 @@ window.onload = function () {
 
 	//touch screen event
 	document.addEventListener("click", function(){
-
-		let text = document.querySelector('p');
-    	text.innerHTML = "new test";
-
 		animate(
     		1000,
     		draw, 
     		timing
     	);
 
-
 	});
 
+
+	//function module for animation
 	function draw(progress){
-		progressId.style.width = progress * 100 + '%';
+		
 	}
 
 	function timing(timeFraction){
 		return timeFraction;
 	}
 
+	//rotaty event
 	document.addEventListener("rotarydetent", function(ev){
 		var direction = ev.detail.direction;
 
 		if(direction == 'CW')
 		{
-			animate(
-	    		1000,
-	    		draw, 
-	    		timing
-	    	);
+			
 		}else if(direction == 'CCW')
 		{
 
 		}
 	});
-
 
 	function animate(duration, draw, timing){
     	let start = performance.now();
@@ -81,6 +74,26 @@ window.onload = function () {
     		}
     	});
     }
+
+ 
+	//layout of menus
+	function setMenuLayout(){
+		let ss_menus = document.querySelectorAll('#ss_menu > div');
+		let ss_itr = 0, ss_num = ss_menus.length, ss_seg_ang = Math.PI * 2 / ss_num;
+		let page_center_x = 180, page_center_y = 180, page_radius = 130;
+
+		for(ss_itr = 0; ss_itr < ss_menus.length; ss_itr++)
+		{
+			let ss_menu = ss_menus[ss_itr];
+			ss_menu.style.top = page_center_y - ss_menu.getBoundingClientRect().top - ss_menu.getBoundingClientRect().height / 2
+				- page_radius * Math.cos(ss_seg_ang * ss_itr) + 'px'; 
+			ss_menu.style.left = page_center_x - ss_menu.getBoundingClientRect().left - ss_menu.getBoundingClientRect().width / 2 
+				+ page_radius * Math.sin(ss_seg_ang * ss_itr) + 'px';
+			//ss_itr++;
+		}
+	};
+	
+	setMenuLayout();
 
 };
 

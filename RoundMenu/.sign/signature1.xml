@@ -4,23 +4,23 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI=".DS_Store">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>YBTIfEIibJg2AYMPX5/t+SIfceum3VjG1POIXlN4mqM=</DigestValue>
+<DigestValue>mMS4S4W65ggb6svfIXDKGXHPYoRR3DZUiZSOHZIaKxU=</DigestValue>
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>5Ns4xK9hlQ7C7snzoIh5n1eR04ZCHIHzD8OGLcADR+I=</DigestValue>
+<DigestValue>lFhrTrDNOq8y48Br68QXLvsStn49EUL79Kv1J2uYq2o=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Rab7sMYJZy5eAuEooviQDpKS1IF1TCrTJzmjK8s/Jgc=</DigestValue>
+<DigestValue>tCI58+6Ifxe+HyQP3cVYSznRHF6UaG7LwfmfPtz+0ho=</DigestValue>
 </Reference>
 <Reference URI="circle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>f0XcXUi8NSLj9Vofm02Vd+k/umuv12AVV5W23AQ++5A=</DigestValue>
+<DigestValue>cq0mHRR3FpR6yRgzTacHH5yAR27ztNnArNc2uQI3vqQ=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>WOG/XDWNhKDuB//SPIQ9VVFubo5+qk2JMhrku7mZJXw=</DigestValue>
+<DigestValue>ek+lDvg6Kzfo0DPYvd5ZXJ1ZUoiRsaYkj8fFdLuNo5M=</DigestValue>
 </Reference>
 <Reference URI="css%2F.DS_Store">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>UaPmQK1zEn4p9BoykYcd9GNwvsEnSgRmxDr01zMfOi0=</DigestValue>
+<DigestValue>y1o7QqWgUqoXJscGLJnpz5A5y0w/mKjbsbeWf5Kx+qU=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -36,7 +36,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>vDkYUV8hi7/hv7Z0/ksLyJa6lWc+7ypqdAwTfHBNNAs=</DigestValue>
+<DigestValue>6whXhijM+c8KFKYBKcKIIovylUwYngAtbVIkykwClEg=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1162,10 +1162,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>+i5daekAbnIThj3rFOl0UxpMhcCvNBzIUCR5tkh0Flg=</DigestValue>
 </Reference>
-<Reference URI="main.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>4Jea9fj6yJyaNOZdyY2GRnWBGrDCVgWU68pPDRlkIUQ=</DigestValue>
-</Reference>
 <Reference URI="second.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>o2ANOv7OCD2ckqp9gJoaMKw16vyqjf8CUzuEYTpNLPo=</DigestValue>
@@ -1179,11 +1175,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-pGrThKMW3sae9XV1CTKRSfUlon7UaY+1K6bY9rPcD68I/0HHFox+AkF+0h1JkEB5NOKwUzVOHFd/
-mRvnXMq1GqpVIkG1R8ZDvv18KN8Ntp4eExy89CppNbpf1XqKq/oChB5DAvFVhESjZs8y4FeGEiLa
-+pTIuu03WxpTjYpd6Ml7svHxyseKJjY++sOUeuAN0ZNPMvNooYM95tb76br+aDzNNHbqA+27IvM2
-c0OR5TNT5XGwdGW2vQKMBaHLInJLzV52P7/FkY4Cf6i6LnZiKeJPtNaPqMZywcR5e+QHUekK6LgF
-pNeJPrqStIbQ+IxCN4Z1edDtINO+G5hAXZUd3A==
+DdJYWcs1hSyPHSrPxG9oKdPQ9ZMdaWI2ttoLJvRWRCGaYkAx+ZdsUSbkGOVuK+Y16KChoPdyRnwB
+XqTGk7CrDhVswyZRVDwIqr798FVs/vtOCacfiQDHfpGGeTXmeGOwP9jbGnn/RR7TSDXaDGhcLr0+
+D0s5nbE+7D4mPPfVgMWqa5tAJIwNryE7MUbKTc6GTeEoLD80Q2bewwn93Exj5TBcIOWrd7xyuj/5
+N+Y1eu7Sr73vqDNHIOG0ZVjbMtt9yLnooThxKGgURTx2qw5d868KaWWTP5YAPQfyARntuP5guE9A
+2aHNKP+3i97ej+q5lBHxCAdQlI2noMzFLyToqQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
