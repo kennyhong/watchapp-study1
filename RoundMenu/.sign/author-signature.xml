@@ -8,11 +8,11 @@
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>b8QzfhAvKNox1o3D/CfiqdMDaHF4pbFzapMDj3riE4c=</DigestValue>
+<DigestValue>5Ns4xK9hlQ7C7snzoIh5n1eR04ZCHIHzD8OGLcADR+I=</DigestValue>
 </Reference>
 <Reference URI="circle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>4l3DJq4+5JLfxhWmbjj6m4Me5ivpdQosFATYNMGvXQ8=</DigestValue>
+<DigestValue>f0XcXUi8NSLj9Vofm02Vd+k/umuv12AVV5W23AQ++5A=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -32,7 +32,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>SIqK7VNFEp3ZNudC29et2ZVaxqchSLB9FB6vU3XP4oQ=</DigestValue>
+<DigestValue>vDkYUV8hi7/hv7Z0/ksLyJa6lWc+7ypqdAwTfHBNNAs=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1175,11 +1175,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-vXIQGWIYPn/sQdJgJpQ6pMv6edEqqXYOXPLYNN1RPiNQJTruemC+8qER4RMpzXmppq8q5X9b2dlZ
-aoQqkwo5ndGh8VI4+cpah810neIkXgUGnt2jBQT7X1KJ1C2MmTjnGRhza8pv4u2MfQNVgZHUlI9K
-k+ToAOBGUowc/7Kk/4tXcKFsMSl/nSeo6swJawhBwO1G1ylfqocTqZmJeG+AacraGkaf0C9RP8d3
-OoiHYm6uoLPFFFtzkHymfqGoCVr+juamIxad0zR5Bz+dGfxya1FBbb6+dsUz4b8dOcFZnUg/JOSm
-kKvZDh0evxXcvnFVSm6VP4Tlka7lMt/z6Kp3jw==
+UkCq39BxdJIvdGi32NIuBIqnCO5xFWGZW6EHq03MM/dV+ex4Zgr+uruZ4fLj8fXNmPsCDuoZDNey
+7gXZs2V/g1aFC5hG/JxQ9Dg+0JxHpG993NDd2sKi4TWGJkhWpljt1zObb6WLi9RfpQQJXfdNw9Jo
+NEGm/r98KqDVTxD6bKwXOy+LXydJ2VZilwLCukme0MZg9HnUI2zg4ui0ovXpio3wIqyBT8R4iMA3
+qijhGfN8m9uOifsB1Tgyh3j+00ygN5fRlSKMUzr/KxvWDHIAUHYEbuEEhA7cQmqqyn5KaM4TBK+F
+f9ykI/yBgggecUQ614LUhswINg6U6JhDHJQfVw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

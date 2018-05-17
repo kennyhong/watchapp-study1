@@ -23,18 +23,18 @@
 		 */
 		document.addEventListener("pagebeforeshow", function (e) {
 			page = e.target;
-			list = page.querySelectorAll(".ui-listview:not(.select-mode-btn-list)");
-			if (list) {
-				/**
-				 * Some pages don't use snap list.
-				 */
-				if (page.id !== "pageMarqueeList" && page.id !== "pageTestVirtualList" && page.id !== "pageAnimation") {
-					len = list.length;
-					for (i = 0; i < len; i++) {
-						listHelper[i] = tau.helper.SnapListStyle.create(list[i]);
-					}
-				}
-			}
+			// list = page.querySelectorAll(".ui-listview:not(.select-mode-btn-list)");
+			// if (list) {
+			// 	/**
+			// 	 * Some pages don't use snap list.
+			// 	 */
+			// 	if (page.id !== "pageMarqueeList" && page.id !== "pageTestVirtualList" && page.id !== "pageAnimation") {
+			// 		len = list.length;
+			// 		for (i = 0; i < len; i++) {
+			// 			listHelper[i] = tau.helper.SnapListStyle.create(list[i]);
+			// 		}
+			// 	}
+			// }
 			
 			
 			
@@ -45,20 +45,14 @@
 		 * Destroys and removes event listeners
 		 */
 		document.addEventListener("pagebeforehide", function () {
-			len = listHelper.length;
-			/**
-			 * Since the snap list helper attaches rotary event listener,
-			 * you must destroy the helper before the page is closed.
-			 */
-			if (len) {
-				for (i = 0; i < len; i++) {
-					listHelper[i].destroy();
-				}
-				listHelper = [];
-			}
+			// len = listHelper.length;
+			// if (len) {
+			// 	for (i = 0; i < len; i++) {
+			// 		listHelper[i].destroy();
+			// 	}
+			// 	listHelper = [];
+			// }
 		});
-		
-		
 		
 	}
 }(tau));

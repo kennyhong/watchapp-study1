@@ -47,8 +47,20 @@ window.onload = function () {
 		return timeFraction;
 	}
 
-	document.addEventListener("rotarydetent", function(){
+	document.addEventListener("rotarydetent", function(ev){
+		var direction = ev.detail.direction;
 
+		if(direction == 'CW')
+		{
+			animate(
+	    		1000,
+	    		draw, 
+	    		timing
+	    	);
+		}else if(direction == 'CCW')
+		{
+
+		}
 	});
 
 
