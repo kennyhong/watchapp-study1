@@ -44,7 +44,6 @@ body {
 	position: relative;
 	color: #fff;
 	background: #fff;
-	transition: all 1s ease;
 }
 
 #ss_menu > div {
@@ -59,14 +58,19 @@ body {
 	border-radius: 50%;
 }
 
+#ss_menu > div.highlight {
+	width: 80px;
+	height: 80px;
+	font-size: 40px;
+	background: #009688;
+
+	transition-property: width, height, font-size, background;
+  	transition-duration: 1s;
+}
+
 #ss_menu > div i {
   display: table-cell;
   vertical-align: middle;
-}
-
-#ss_menu > div:hover {
-  background: #009688;
-  cursor: pointer;
 }
 
 #coord {

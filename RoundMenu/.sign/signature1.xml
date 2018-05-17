@@ -8,11 +8,11 @@
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>lFhrTrDNOq8y48Br68QXLvsStn49EUL79Kv1J2uYq2o=</DigestValue>
+<DigestValue>8cax7ZAkZiJxnsa2ESJzy1DJUkMbG8zvSOQlcTZvuY8=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>tCI58+6Ifxe+HyQP3cVYSznRHF6UaG7LwfmfPtz+0ho=</DigestValue>
+<DigestValue>65m+KLJwNxBp3KDaC0Ls1rx1Ks/tdJFRG2/RSDwkcus=</DigestValue>
 </Reference>
 <Reference URI="circle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>y1o7QqWgUqoXJscGLJnpz5A5y0w/mKjbsbeWf5Kx+qU=</DigestValue>
+<DigestValue>ey3tj2rU+TOKn3VZSAiW3vYSNC2u0euZa+bO7ey3ObI=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -36,7 +36,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>6whXhijM+c8KFKYBKcKIIovylUwYngAtbVIkykwClEg=</DigestValue>
+<DigestValue>E4LmEpPt9T8rza2NnWYImENUoft5ChYNeqxcnpIG8Eo=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1175,11 +1175,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-DdJYWcs1hSyPHSrPxG9oKdPQ9ZMdaWI2ttoLJvRWRCGaYkAx+ZdsUSbkGOVuK+Y16KChoPdyRnwB
-XqTGk7CrDhVswyZRVDwIqr798FVs/vtOCacfiQDHfpGGeTXmeGOwP9jbGnn/RR7TSDXaDGhcLr0+
-D0s5nbE+7D4mPPfVgMWqa5tAJIwNryE7MUbKTc6GTeEoLD80Q2bewwn93Exj5TBcIOWrd7xyuj/5
-N+Y1eu7Sr73vqDNHIOG0ZVjbMtt9yLnooThxKGgURTx2qw5d868KaWWTP5YAPQfyARntuP5guE9A
-2aHNKP+3i97ej+q5lBHxCAdQlI2noMzFLyToqQ==
+Z66idUe5rxLZ/i2igYyR6iT0hib/cHKN3HNQNyIqvx6za37IaQWCWkrZyQincegX7lbFnknEtsWN
+d0iOC1j8DHduqjbFweo7ZUVXmfhL2nczhp/OAsO4O7Z0OCk/MsEFopJ0pxs9zCJt5ycRh5lGZUwV
++KlSYTlxTtC/GdxvWBhI5/VpZM1QU9AGjiaymNSBa3snB5gUZUF33ZLSVTCnKltCAU4xkWJtbZQl
+brfm4pUMkNvVmzahq7ZngcMZNvSsi7WGHduAv9O+SX6c8VyATZj/jI4i2jIej6npxTcYPWimNlce
++LSnHVVI83G9FDXf/NurKUFCph5crYlrnxYfGA==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

@@ -24,17 +24,6 @@ window.onload = function () {
 	});
 
 
-	//touch screen event
-	document.addEventListener("click", function(){
-		animate(
-    		1000,
-    		draw, 
-    		timing
-    	);
-
-	});
-
-
 	//function module for animation
 	function draw(progress){
 		
@@ -43,19 +32,6 @@ window.onload = function () {
 	function timing(timeFraction){
 		return timeFraction;
 	}
-
-	//rotaty event
-	document.addEventListener("rotarydetent", function(ev){
-		var direction = ev.detail.direction;
-
-		if(direction == 'CW')
-		{
-			
-		}else if(direction == 'CCW')
-		{
-
-		}
-	});
 
 	function animate(duration, draw, timing){
     	let start = performance.now();
@@ -77,9 +53,13 @@ window.onload = function () {
 
  
 	//layout of menus
+	let ss_num = 0;
+	let ss_menus;
 	function setMenuLayout(){
-		let ss_menus = document.querySelectorAll('#ss_menu > div');
-		let ss_itr = 0, ss_num = ss_menus.length, ss_seg_ang = Math.PI * 2 / ss_num;
+		ss_menus = document.querySelectorAll('#ss_menu > div');
+		let ss_itr = 0;
+		ss_num = ss_menus.length;
+		let ss_seg_ang = Math.PI * 2 / ss_num;
 		let page_center_x = 180, page_center_y = 180, page_radius = 130;
 
 		for(ss_itr = 0; ss_itr < ss_menus.length; ss_itr++)
@@ -94,6 +74,59 @@ window.onload = function () {
 	};
 	
 	setMenuLayout();
+
+	//rotaty event
+	let rotationCount = 0;
+
+	document.addEventListener("rotarydetent", function(ev){
+		let direction = ev.detail.direction;
+
+		if(direction == 'CW')
+		{
+			rotationCount++;
+			if(rotationCount == ss_num)
+			{
+				rotationCount = 0;
+			}
+
+		}else if(direction == 'CCW')
+		{
+			rotationCount--;
+			if(rotationCount < 0)
+			{
+				rotationCount = ss_num - 1; 
+			}
+		}
+
+		//console.log(rotationCount);
+		highLight(rotationCount, ss_menus);
+
+	});
+
+	function highLight(itemIndex, menus){
+
+		if(itemIndex < menus.length)
+		{
+			//remove a previous highlight
+			let highlighted = document.querySelectorAll('.highlight');
+			for(let itrh = 0; itrh < highlighted.length; itrh++)
+			{
+				highlighted[itrh].classList.remove('highlight');
+			}
+			
+			let item = menus[itemIndex];
+			item.classList.add('highlight');
+		}
+	}
+
+	//touch screen event, used for debugging
+	document.addEventListener("click", function(){
+		
+
+		rotationCount++;
+		highLight(rotationCount, ss_menus);
+
+	});
 
 };
 
