@@ -7,7 +7,7 @@ body {
     background-color:#222;
 }
 
-.contents {
+.ui-contents {
 	display: flex;
 	display: -webkit-flex;
 	box-sizing: border-box;
@@ -22,7 +22,7 @@ body {
 	padding-right: 16px;
 }
 
-.content_text {
+.content-text {
 	font-weight:bold;
 	font-size:5em;
 	color:#fff;

@@ -8,11 +8,11 @@
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>WVu4YBUtgGHNH137csqQvIWgaUMcIX16As7AB1jk+aI=</DigestValue>
+<DigestValue>b8QzfhAvKNox1o3D/CfiqdMDaHF4pbFzapMDj3riE4c=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>spFgsRIWumg8gZBcG3vHe9Kaom7r9Vg3ffH/A3L6cNM=</DigestValue>
+<DigestValue>rrdAr7lfXmlBiiKqDRkOU99nBONnbxAy6pdbaSkBlC8=</DigestValue>
 </Reference>
 <Reference URI="circle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>rguaQHKpBN5UuYa4G8kM3Yqyiwa9zVcsmoMI+imHtyA=</DigestValue>
+<DigestValue>UaPmQK1zEn4p9BoykYcd9GNwvsEnSgRmxDr01zMfOi0=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -36,7 +36,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ssZBuRI7IZ8mNvk0H1hwz1L5B5yaCwWjSDqfSai+NhM=</DigestValue>
+<DigestValue>SIqK7VNFEp3ZNudC29et2ZVaxqchSLB9FB6vU3XP4oQ=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1179,11 +1179,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-mUwCy8PvA5uBxb7iDsYFLt2bTtKhHjxmusvAEGtE7KEUdEMVXuJMCyn/zGaIx0t3qxKaiqARP9SK
-QncqSntNv+FUvOzl65Xe9FA+FmF6YBkNQdegn3jKbn0rFiZeLQi4NPLkR3Fn8FYo0suaW8EUOLZe
-6LMhv4os7Ua/5FNyHVeKj2FzPQPcTXuWafy7pNZTrEvuTQVk5X9haQWnnntMmIFpmjNh5fKyw1LA
-/4GxI+ByUP9WVIqyDbmTZ37XixjLYbdT6unXtpVSlLhTWBgnokjN7VRT5xitMoJmZU4X/pZgZ+xI
-dfrry/VkETRO1+vw0BprfFAdbzRGOPGUdJUZlw==
+t5gKcK5PmeXyj7Y6DxeQd/hO/DXVAiEacyYodHMrwml72hdmTUEIdtZMUJvRj5/4mECtnSvn2//7
+0HQKngf7ELvJB6b5jSxXQT0l0jZUEd69yNP9B363lRamL03PitGcoJeYwqLbvSp/N8ack/3eo3n1
+vW9LJQiRNWx0xCE+FuA491qhb3tjO7EjARAxhEmMjXC3LbjaqsYMUESh15tZ7i3THihRrywkDjmw
+TwIo4DkTHBq8JzLHCgEHayRfxPufGFzgkXKlP9bj13fAZLO5S76JfFuEHx/fW/dW3+9AZlcZ3SWU
+mzWNfYHoX+1UZ3BzX8GXEPKqNFry633N1SOx/w==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
