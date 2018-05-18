@@ -52,7 +52,7 @@ body {
 	height: 60px;
 	font-size: 30px;
 	text-align: center;
-	background: #00796B;
+	background: #789688;
 	display: table;
 	border-radius: 50%;
 	transform: translateX(-50%) translateY(-50%);
@@ -64,7 +64,7 @@ body {
 	width: 80px;
 	height: 80px;
 	font-size: 40px;
-	background: #009688;
+	background: #00796B;
 }
 
 #ss_menu > div i {
@@ -85,7 +85,7 @@ body {
 	height: 30px;
 	font-size: 20px;
 	text-align: center;
-	background: #009688;
+	background: #00796B;
 	display: table;
 	border-radius: 50%;
 	transform: translateX(-50%) translateY(-50%);
