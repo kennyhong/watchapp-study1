@@ -1,6 +1,6 @@
 /.metadata/
 
-RoundMenu/*.wgt
+RoundMenu/RoundMenu.wgt
 RoundMenu/.sign/
 
 .CustomProfile/
@@ -8,3 +8,5 @@ RoundMenu/.sign/
 TouchPaint/
 
 PilotStudy/.sign/
+
+PilotStudy/PilotStudy.wgt
