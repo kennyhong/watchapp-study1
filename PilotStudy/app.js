@@ -110,12 +110,13 @@ function toggleTrial() {
 		currAngle = 0;
 		window.addEventListener("rotarydetent", rotaryEventHandler);
 		state.innerHTML = "Stop";
+		currCondition.innerHTML = "";
 	} else if (state.innerHTML === "Stop") {
 		window.removeEventListener("rotarydetent", rotaryEventHandler);
 		if(currTrial < conditions.length - 1) {
 			state.innerHTML = "Start";
 			currTrial++;
-			currCondition.innerHTML = conditions[currTrial];
+			currCondition.innerHTML = "PID: " + participantId + " | Condition: " + conditions[currTrial];
 		} else {
 			state.innerHTML = "Complete"
 		}
@@ -193,7 +194,7 @@ function setupStudy() {
 							conditions[i] = splitContent[i].split(",")[1].replace(/(\r\n|\n|\r)/gm,"");
 						}
 						console.log(conditions);
-						currCondition.innerHTML = conditions[1];
+						currCondition.innerHTML = "PID: " + participantId + " | Condition: " + conditions[1];
 					});
 				}
 				
