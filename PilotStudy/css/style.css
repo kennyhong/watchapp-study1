@@ -11,6 +11,12 @@ body {
 	margin-top: 45px
 }
 
+.subline {
+	margin: auto;
+	font-size: 14pt;
+	color: black;
+}
+
 .circle-page {
 	background-color: #18c76a;
 	border: 2px solid gray;
@@ -44,14 +50,9 @@ body {
 }
 
 .thumbnail {
-	height: 220px;
-	width: 220px;
-	border-radius: 50%;
-	background-color: #18c76a;
-	border: 2px solid black;
 	color: black;
 	margin: auto;
+	margin-top:75px;
 	text-align: center;
-	line-height: 220px;
 	justify-content: center;
 }

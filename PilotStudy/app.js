@@ -6,6 +6,8 @@ var conditions = [];
 var documentsDir, dataFile;
 var participantId = 1;
 var state;
+var currCondition;
+var currDate = new Date();
 
 function log(data) {
 	if (dataFile !== null) {
@@ -26,39 +28,40 @@ function rotaryEventHandler(event) {
 	if (direction === "CW") {
 		currAngle += 15;
 		data = {
-			timestamp : Date.now(),
+			timestamp : Date.now() - currDate,
 			type : "rotary",
 			x : 0,
 			y : 0,
 			angle : currAngle
 		};
 		log(data);
-		console.log("timestamp: " + Date.now() + " type: " + "rotary" + " current angle: " + currAngle);
+		console.log("timestamp: " + Date.now() - currDate + " type: " + "rotary" + " current angle: " + currAngle);
 	} else if (direction === "CCW") {
 		currAngle -= 15;
 		data = {
-			timestamp : Date.now(),
+			timestamp : Date.now() - currDate,
 			type : "rotary",
 			x : 0,
 			y : 0,
 			angle : currAngle
 		};
 		log(data);
-		console.log("timestamp: " + Date.now() + " type: " + "rotary" + " current angle: " + currAngle);
+		console.log("timestamp: " + Date.now() - currDate + " type: " + "rotary" + " current angle: " + currAngle);
 	}
 }
 
 function touchstartEventHandler(event) {
 	var target = event.touches.item(0);
+	currDate = Date.now();
 	var data = {
-		timestamp : Date.now(),
+		timestamp : Date.now() - currDate,
 		type : event.type,
 		x : target.clientX,
 		y : target.clientY,
 		angle : 0
 	};
 	log(data);
-	console.log("timestamp: " + Date.now() + " type: " + event.type + " x: "
+	console.log("timestamp: " + Date.now() - currDate + " type: " + event.type + " x: "
 			+ target.clientX + " y: " + target.clientY);
 	toggleTrial();
 }
@@ -66,40 +69,40 @@ function touchstartEventHandler(event) {
 function touchendEventHandler(event) {
 	var target = event.changedTouches.item(0);
 	var data = {
-		timestamp : Date.now(),
+		timestamp : Date.now() - currDate,
 		type : event.type,
 		x : target.clientX,
 		y : target.clientY,
 		angle : 0
 	};
 	log(data);
-	console.log("timestamp: " + Date.now() + " type: " + event.type + " x: " + target.clientX + " y: " + target.clientY);
+	console.log("timestamp: " + Date.now() - currDate + " type: " + event.type + " x: " + target.clientX + " y: " + target.clientY);
 }
 
 function touchcancelEventHandler(event) {
 	var target = event.touches.item(0);
 	var data = {
-		timestamp : Date.now(),
+		timestamp : Date.now() - currDate,
 		type : event.type,
 		x : target.clientX,
 		y : target.clientY,
 		angle : 0
 	};
 	log(data);
-	console.log("timestamp: " + Date.now() + " type: " + event.type + " x: " + target.clientX + " y: " + target.clientY);
+	console.log("timestamp: " + Date.now() - currDate + " type: " + event.type + " x: " + target.clientX + " y: " + target.clientY);
 }
 
 function touchmoveEventHandler(event) {
 	var target = event.touches.item(0);
 	var data = {
-		timestamp : Date.now(),
+		timestamp : Date.now() - currDate,
 		type : event.type,
 		x : target.clientX,
 		y : target.clientY,
 		angle : 0
 	};
 	log(data);
-	console.log("timestamp: " + Date.now() + " type: " + event.type + " x: " + target.clientX + " y: " + target.clientY);
+	console.log("timestamp: " + Date.now() - currDate + " type: " + event.type + " x: " + target.clientX + " y: " + target.clientY);
 }
 
 function toggleTrial() {
@@ -112,6 +115,7 @@ function toggleTrial() {
 		if(currTrial < conditions.length - 1) {
 			state.innerHTML = "Start";
 			currTrial++;
+			currCondition.innerHTML = conditions[currTrial];
 		} else {
 			state.innerHTML = "Complete"
 		}
@@ -185,10 +189,11 @@ function setupStudy() {
 						studyCSVContent = stream.read(stream.bytesAvailable);
 						console.log(studyCSVContent);
 						var splitContent = studyCSVContent.split("\n");
-						for (var i = 0; i < splitContent.length - 1; i++) {
+						for (var i = 0; i < splitContent.length; i++) {
 							conditions[i] = splitContent[i].split(",")[1].replace(/(\r\n|\n|\r)/gm,"");
 						}
 						console.log(conditions);
+						currCondition.innerHTML = conditions[1];
 					});
 				}
 				
@@ -210,6 +215,7 @@ function setupStudy() {
 
 window.onload = function() {
 	state = document.getElementById("trial-state");
+	currCondition = document.getElementById("trial-condition");
 	setupStudy();
 	window.addEventListener("touchstart", touchstartEventHandler);
 	window.addEventListener("touchend", touchendEventHandler);
