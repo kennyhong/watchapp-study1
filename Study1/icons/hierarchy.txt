@@ -1,0 +1,84 @@
+animals
+	bat
+	camel
+	cat
+	dinosaur
+	dog
+	dolphin
+	duck
+	fish
+	frog
+	penguin
+	pigeon
+	zebra
+	
+fruits
+	apple
+	banana
+	cherry
+	grapes
+	kiwi
+	lemon
+	peach
+	pear
+	pineapple
+	prune
+	strawberry
+	watermelon
+	
+vegetables
+  artichoke
+	broccoli
+	carrot
+	corn
+	cucumber
+	garlic
+	lettuce
+	mushroom
+	onion
+	pepper
+	potato
+	pumpkin
+	
+office
+	chair
+	clock
+	envelope
+	keyboard
+	mouse
+	paperclip
+	pencil
+	printer
+	stamp
+	stapler
+	telephone
+	trash
+	
+clothing
+	boot
+	bowtie
+	button
+	coat
+	dress_shirt
+	gloves
+	hat
+	skirt
+	socks
+	sweater
+	t-shirt
+	trousers
+	
+recreation
+	baseball
+	basketball
+	bowling
+	cards
+	chess
+	darts
+	dice
+	hockey
+	karate
+	pool
+	rubikscube
+	tennis
+	
