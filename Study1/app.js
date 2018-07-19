@@ -285,7 +285,7 @@ function toggleTrial() {
 		inTrial = true;
 		resetMenu();
 		setMenuLayout();
-		if (conditions[currTrial].menuCondition === "false") {
+		if (conditions[currTrial].menuCondition === "true") {
 			$('#ss_menu').hide();
 			timeoutHandler = setTimeout(function () {$('#ss_menu').show()}, 1000);
 		}
