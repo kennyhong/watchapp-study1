@@ -40,52 +40,40 @@ body {
 
 #ss_menu > div {
 	position: absolute;
-	width: 40px;
-	height: 40px;
 	font-size: 30px;
 	text-align: center;
-	background: #fff;
 	display: table;
 	border-radius: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	transition-property: width, height, font-size, background, margin-left, margin-top;;
-  	transition-duration: 1s;
-}
-
-#ss_menu > div.highlight {
-	width: 60px;
-	height: 60px;
-	font-size: 40px;
-	background: #cecece;
 }
 
 #ss_menu > div.highlight img {
-	width: 40px;
-	height: 40px;
+	width: 60px;
+	height: 60px;
 	font-size: 40px;
  	display: block;
  	margin-left: auto;
  	margin-right: auto;
  	margin-top: 10px;
-	background: #cecece;
+	background: #fff;
+ 	border-radius: 50%;
 }
 
 #ss_menu > div img {
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
  	display: block;
  	margin-left: auto;
  	margin-right: auto;
  	margin-top: 10px;
-	transition-property: width, height, font-size, background, margin-left, margin-top;;
-  	transition-duration: 1s;
+ 	border-radius: 50%;
 }
 
 .subline {
 	color: black;
 	text-align: center;
 	justify-content: center;
-	margin-top:210px;
+	margin-top:220px;
 	font-size: 12pt;
 }
 
@@ -103,13 +91,13 @@ body {
 	position: absolute;
 	margin-top: 130px;
 	margin-left: 130px;
-	border:none;
 }
 
 .imgthumb img {
 	border: none;
 	width: 80px;
 	height: 80px;
+	border-radius: 50%;
 }
 
 .container {

@@ -1,4 +1,5 @@
-trial_id,condition
-1,one-finger
-2,two-fingers
-3,thumb
+trial_id,motorCondition,displayCondition,menuCondition
+1,1,2,true
+2,2,1,false
+3,3,3,true
+4,1,3,true
