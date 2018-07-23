@@ -8,7 +8,9 @@ var isMenuVisable = true;
 var participantId = 1;
 var state;
 var currCondition;
+//var totalDate = Date.now();
 var currDate = Date.now();
+//var prevDate = Date.now();
 var ss_num = 0;
 var ss_menus;
 var imgPaths = [ 'icons/images/apple.png', 'icons/images/cat.png',
@@ -119,31 +121,6 @@ function setupStudy() {
 	});
 }
 
-function resetStudy() {
-	if (documentsDir) {
-		resultsFile = documentsDir.resolve('participant1.csv');
-		eventsFile = documentsDir.resolve('events_participant1.csv');
-		studySaveFile = documentsDir.resolve('study.txt');
-		documentsDir.deleteFile(resultsFile.fullPath, function() {
-			console.log("Result File Deleted");
-		}, function(error) {
-			console.log(JSON.stringify(error));
-		});
-		documentsDir.deleteFile(eventsFile.fullPath, function() {
-			console.log("Events File Deleted");
-		}, function(error) {
-			console.log(JSON.stringify(error));
-		});
-		documentsDir.deleteFile(studySaveFile.fullPath, function() {
-			console.log("Save File Deleted");
-		}, function(error) {
-			console.log(JSON.stringify(error));
-		});
-		participantId = 0;
-		saveParticipant();
-	}
-}
-
 function deleteFile(file) {
 	if (documentsDir) {
 		documentsDir.deleteFile(file.fullPath, function() {
@@ -195,13 +172,13 @@ function log(data) {
 	var targetItem;
 
 	if (rotationCount > -1) {
-		currItem = imgPaths[rotationCount];
+		currItem = (rotationCount + 1) + ' - ' + cleanImageFilePath(imgPaths[rotationCount]);
 	} else {
 		currItem = "unselected";
 	}
 
 	if (currTarget > -1) {
-		targetItem = targetImagePaths[currTarget];
+		targetItem = (rotationCount + 1) + ' - ' +cleanImageFilePath(targetImagePaths[currTarget]);
 	} else {
 		targetItem = "no_target";
 	}
@@ -226,13 +203,13 @@ function logEvent(data) {
 	var targetItem;
 
 	if (rotationCount > -1) {
-		currItem = imgPaths[rotationCount];
+		currItem = (rotationCount + 1) + ' - ' + cleanImageFilePath(imgPaths[rotationCount]);
 	} else {
 		currItem = "unselected";
 	}
 
 	if (currTarget > -1) {
-		targetItem = targetImagePaths[currTarget];
+		targetItem = (currTarget + 1) + ' - ' + cleanImageFilePath(targetImagePaths[currTarget]);
 	} else {
 		targetItem = "no_target";
 	}
@@ -242,7 +219,7 @@ function logEvent(data) {
 					+ "," + currTrial + ","
 					+ conditions[currTrial].motorCondition + ","
 					+ conditions[currTrial].displayCondition + ","
-					+ conditions[currTrial].menuCondition + "," + currItem
+					+ conditions[currTrial].menuCondition + "," + currItem	
 					+ "," + targetItem + "," + data.event_type + "," + data.x
 					+ "," + data.y + "," + data.angle + "\n");
 			fs.close();
@@ -250,6 +227,13 @@ function logEvent(data) {
 			console.log("Error " + e.message);
 		}, "UTF-8");
 	}
+}
+
+function cleanImageFilePath(str) {
+    var split = str.split("/")[2];
+    var res = split.slice(0, split.indexOf('.'));
+    
+    return res;
 }
 
 function clickEvent(event) {
@@ -285,12 +269,14 @@ function toggleTrial() {
 		inTrial = true;
 		resetMenu();
 		setMenuLayout();
+		loadTarget();
+		motorRotationCount = 0;
+		document.querySelector("#ss_menu").style.visibility = "visible";
 		if (conditions[currTrial].menuCondition === "true") {
 			$('#ss_menu').hide();
 			timeoutHandler = setTimeout(function () {$('#ss_menu').show()}, 1000);
 		}
-		loadTarget();
-		document.querySelector("#ss_menu").style.visibility = "visible";
+		
 	} else if (state.innerHTML !== "Start" && !inTrial) {
 		window.removeEventListener("rotarydetent", rotaryEventHandler);
 		if (currTrial < conditions.length - 1) {
@@ -299,14 +285,12 @@ function toggleTrial() {
 			currCondition.innerHTML = "Motor: " + conditions[currTrial].motorCondition;
 			document.querySelector("#target-img").style.visibility = "hidden";
 			hideMenu();
-			alreadyAppeared = false;
 		} else {
 			document.querySelector("#target-img").style.visibility = "hidden";
 			hideMenu();
 			currCondition.innerHTML = "";
 			document.querySelector('#trial-state').style.marginLeft = "135px";
 			state.innerHTML = "Complete";
-			//resetStudy();
 		}
 	}
 }
@@ -340,9 +324,9 @@ function rotaryEventHandler(event) {
 				checkOvershoot(prevItem);
 			}
 			motorRotationCount = 0;
-		}
-		if (rotationCount == ss_num) {
-			rotationCount = 0;
+			if (rotationCount == ss_num) {
+				rotationCount = 0;
+			}
 		}
 		data = {
 			log_type : "data",
@@ -350,7 +334,7 @@ function rotaryEventHandler(event) {
 			event_type : "rotary",
 			x : 0,
 			y : 0,
-			angle : currAngle
+			angle : '+15'
 		};
 		console.log(motorRotationCount);
 		log(data);
@@ -362,7 +346,7 @@ function rotaryEventHandler(event) {
 			motorRotationCount = 0
 			turnRight = false;
 		}
-		motorRotationCount++
+		motorRotationCount++;
 		if (motorRotationConditions[conditions[currTrial].motorCondition - 1] == motorRotationCount) {
 			if (rotationCount !== -1) {
 				var prevItem = imgPaths[rotationCount];
@@ -371,19 +355,19 @@ function rotaryEventHandler(event) {
 			if (prevItem !== '') {
 				checkOvershoot(prevItem);
 			}
+			if (rotationCount < 0) {
+				rotationCount = ss_num - 1;
+			}
 			motorRotationCount = 0;
 		}
 		currAngle -= 15;
-		if (rotationCount < 0) {
-			rotationCount = ss_num - 1;
-		}
 		data = {
 			log_type : "data",
 			timestamp : Date.now() - currDate,
 			event_type : "rotary",
 			x : 0,
 			y : 0,
-			angle : currAngle
+			angle : '-15'
 		};
 		console.log(motorRotationCount);
 		log(data);
@@ -472,6 +456,7 @@ function selectionCheck(clickX, clickY) {
 		};
 		logEvent(data);
 		iterateTarget();
+		motorRotationCount = 0;
 		// Log Selection Data
 	} else {
 		// Log penalty, go on to the next item
@@ -485,6 +470,7 @@ function selectionCheck(clickX, clickY) {
 		};
 		logEvent(data);
 		iterateTarget();
+		motorRotationCount = 0;
 	}
 }
 	

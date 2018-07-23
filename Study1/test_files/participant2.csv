@@ -1,0 +1,162 @@
+log_type,timestamp,participant_id,trial_number,motor_condition,display_condition,menu_condition,current_selection,target_selection,event_type,x,y,angle
+data,10608,2,1,1,2,true,unselected,no_target,click,163,248,0
+data,1400,2,1,1,2,true,1 - apple,1 - zebra,rotary,0,0,+15
+data,1500,2,1,1,2,true,2 - cat,2 - zebra,rotary,0,0,+15
+data,2122,2,1,1,2,true,3 - zebra,3 - zebra,rotary,0,0,+15
+data,2554,2,1,1,2,true,4 - printer,4 - zebra,rotary,0,0,+15
+data,9754,2,1,1,2,true,3 - zebra,3 - zebra,rotary,0,0,-15
+data,10882,2,1,1,2,true,3 - zebra,3 - zebra,click,164,177,0
+data,47453,2,1,1,2,true,unselected,0 - carrot,click,167,11,0
+data,50640,2,1,1,2,true,1 - apple,1 - cat,rotary,0,0,+15
+data,50919,2,1,1,2,true,2 - cat,2 - cat,rotary,0,0,+15
+data,51953,2,1,1,2,true,2 - cat,2 - cat,click,170,181,0
+data,54122,2,1,1,2,true,1 - apple,1 - penguin,rotary,0,0,+15
+data,54189,2,1,1,2,true,2 - cat,2 - penguin,rotary,0,0,+15
+data,54230,2,1,1,2,true,3 - zebra,3 - penguin,rotary,0,0,+15
+data,54723,2,1,1,2,true,4 - printer,4 - penguin,rotary,0,0,+15
+data,54794,2,1,1,2,true,5 - paperclip,5 - penguin,rotary,0,0,+15
+data,54893,2,1,1,2,true,6 - carrot,6 - penguin,rotary,0,0,+15
+data,55350,2,1,1,2,true,7 - pineapple,7 - penguin,rotary,0,0,+15
+data,55734,2,1,1,2,true,8 - penguin,8 - penguin,rotary,0,0,+15
+data,56563,2,1,1,2,true,8 - penguin,8 - penguin,click,171,236,0
+data,58870,2,1,1,2,true,8 - penguin,8 - pineapple,rotary,0,0,-15
+data,59247,2,1,1,2,true,7 - pineapple,7 - pineapple,rotary,0,0,-15
+data,60161,2,1,1,2,true,7 - pineapple,7 - pineapple,click,176,205,0
+data,61788,2,1,1,2,true,1 - apple,1 - printer,rotary,0,0,+15
+data,62056,2,1,1,2,true,2 - cat,2 - printer,rotary,0,0,+15
+data,62581,2,1,1,2,true,3 - zebra,3 - printer,rotary,0,0,+15
+data,65031,2,1,1,2,true,4 - printer,4 - printer,rotary,0,0,+15
+data,66054,2,1,1,2,true,4 - printer,4 - printer,click,159,225,0
+data,67181,2,1,1,2,true,unselected,0 - paperclip,click,159,225,0
+data,67371,2,1,1,2,true,unselected,0 - apple,click,159,225,0
+data,67561,2,1,1,2,true,unselected,0 - apple,click,159,225,0
+data,67714,2,1,1,2,true,unselected,0 - pineapple,click,159,225,0
+data,67916,2,1,1,2,true,unselected,0 - zebra,click,159,225,0
+data,68095,2,1,1,2,true,unselected,0 - penguin,click,159,225,0
+data,68277,2,1,1,2,true,unselected,0 - carrot,click,159,225,0
+data,68436,2,1,1,2,true,unselected,0 - cat,click,159,225,0
+data,68660,2,1,1,2,true,unselected,0 - paperclip,click,159,225,0
+data,68804,2,1,1,2,true,unselected,0 - printer,click,159,225,0
+data,68987,2,1,1,2,true,unselected,0 - pineapple,click,159,225,0
+data,69206,2,1,1,2,true,unselected,0 - apple,click,159,225,0
+data,69391,2,1,1,2,true,unselected,0 - paperclip,click,159,225,0
+data,69581,2,1,1,2,true,unselected,0 - zebra,click,159,225,0
+data,69799,2,1,1,2,true,unselected,0 - printer,click,159,225,0
+data,69985,2,1,1,2,true,unselected,0 - penguin,click,159,225,0
+data,70335,2,1,1,2,true,unselected,0 - carrot,click,159,225,0
+data,70712,2,2,2,1,false,unselected,0 - cat,click,159,225,0
+data,71020,2,2,2,1,false,unselected,0 - cat,click,159,225,0
+data,5926,2,2,2,1,false,8 - penguin,8 - apple,rotary,0,0,-15
+data,8091,2,2,2,1,false,7 - pineapple,7 - apple,rotary,0,0,-15
+data,9060,2,2,2,1,false,7 - pineapple,7 - apple,rotary,0,0,-15
+data,10556,2,2,2,1,false,6 - carrot,6 - apple,rotary,0,0,-15
+data,11867,2,2,2,1,false,6 - carrot,6 - apple,rotary,0,0,-15
+data,12844,2,2,2,1,false,5 - paperclip,5 - apple,rotary,0,0,-15
+data,13728,2,2,2,1,false,5 - paperclip,5 - apple,rotary,0,0,-15
+data,14373,2,2,2,1,false,4 - printer,4 - apple,rotary,0,0,-15
+data,15006,2,2,2,1,false,4 - printer,4 - apple,rotary,0,0,-15
+data,16122,2,2,2,1,false,3 - zebra,3 - apple,rotary,0,0,-15
+data,16392,2,2,2,1,false,3 - zebra,3 - apple,rotary,0,0,-15
+data,19768,2,2,2,1,false,2 - cat,2 - apple,rotary,0,0,-15
+data,32796,2,2,2,1,false,2 - cat,2 - apple,click,135,18,0
+data,45031,2,2,2,1,false,unselected,0 - cat,click,135,18,0
+data,57921,2,2,2,1,false,unselected,0 - carrot,click,132,1,0
+data,85583,2,2,2,1,false,8 - penguin,8 - pineapple,rotary,0,0,-15
+data,87236,2,2,2,1,false,7 - pineapple,7 - pineapple,rotary,0,0,-15
+data,87964,2,2,2,1,false,7 - pineapple,7 - pineapple,rotary,0,0,-15
+data,90938,2,2,2,1,false,6 - carrot,6 - pineapple,rotary,0,0,-15
+data,91857,2,2,2,1,false,6 - carrot,6 - pineapple,rotary,0,0,-15
+data,92770,2,2,2,1,false,5 - paperclip,5 - pineapple,rotary,0,0,-15
+data,93828,2,2,2,1,false,5 - paperclip,5 - pineapple,rotary,0,0,-15
+data,94921,2,2,2,1,false,4 - printer,4 - pineapple,rotary,0,0,-15
+data,95287,2,2,2,1,false,4 - printer,4 - pineapple,rotary,0,0,-15
+data,95965,2,2,2,1,false,3 - zebra,3 - pineapple,rotary,0,0,-15
+data,96746,2,2,2,1,false,3 - zebra,3 - pineapple,rotary,0,0,-15
+data,97163,2,2,2,1,false,2 - cat,2 - pineapple,rotary,0,0,-15
+data,97968,2,2,2,1,false,2 - cat,2 - pineapple,rotary,0,0,-15
+data,98572,2,2,2,1,false,1 - apple,1 - pineapple,rotary,0,0,-15
+data,99031,2,2,2,1,false,1 - apple,1 - pineapple,rotary,0,0,-15
+data,99618,2,2,2,1,false,8 - penguin,8 - pineapple,rotary,0,0,-15
+data,100633,2,2,2,1,false,8 - penguin,8 - pineapple,rotary,0,0,-15
+data,101232,2,2,2,1,false,7 - pineapple,7 - pineapple,rotary,0,0,-15
+data,102376,2,2,2,1,false,7 - pineapple,7 - pineapple,click,193,189,0
+data,107147,2,2,2,1,false,8 - penguin,8 - paperclip,rotary,0,0,-15
+data,113565,2,2,2,1,false,8 - penguin,8 - paperclip,click,224,165,0
+data,113754,2,2,2,1,false,unselected,0 - printer,click,224,165,0
+data,113910,2,2,2,1,false,unselected,0 - zebra,click,224,165,0
+data,114077,2,2,2,1,false,unselected,0 - penguin,click,224,165,0
+data,114217,2,2,2,1,false,unselected,0 - penguin,click,224,165,0
+data,114343,2,2,2,1,false,unselected,0 - paperclip,click,224,165,0
+data,114509,2,2,2,1,false,unselected,0 - pineapple,click,224,165,0
+data,114662,2,2,2,1,false,unselected,0 - apple,click,224,165,0
+data,114826,2,2,2,1,false,unselected,0 - zebra,click,224,165,0
+data,114981,2,2,2,1,false,unselected,0 - printer,click,224,165,0
+data,115155,2,2,2,1,false,unselected,0 - cat,click,224,165,0
+data,115318,2,2,2,1,false,unselected,0 - carrot,click,224,165,0
+data,115622,2,2,2,1,false,unselected,0 - paperclip,click,224,165,0
+data,115809,2,2,2,1,false,unselected,0 - printer,click,224,165,0
+data,115960,2,2,2,1,false,unselected,0 - cat,click,224,165,0
+data,116345,2,2,2,1,false,unselected,0 - zebra,click,224,165,0
+data,116498,2,2,2,1,false,unselected,0 - carrot,click,224,165,0
+data,116665,2,2,2,1,false,unselected,0 - penguin,click,224,165,0
+data,116842,2,2,2,1,false,unselected,0 - apple,click,224,165,0
+data,117000,2,3,3,3,true,unselected,0 - pineapple,click,224,165,0
+data,117197,2,3,3,3,true,unselected,0 - pineapple,click,224,165,0
+data,149,2,3,3,3,true,unselected,0 - cat,click,224,165,0
+data,336,2,3,3,3,true,unselected,0 - carrot,click,224,165,0
+data,485,2,3,3,3,true,unselected,0 - penguin,click,224,165,0
+data,734,2,3,3,3,true,unselected,0 - printer,click,224,165,0
+data,876,2,3,3,3,true,unselected,0 - apple,click,224,165,0
+data,1055,2,3,3,3,true,unselected,0 - pineapple,click,224,165,0
+data,1225,2,3,3,3,true,unselected,0 - zebra,click,224,165,0
+data,1400,2,3,3,3,true,unselected,0 - paperclip,click,224,165,0
+data,1598,2,3,3,3,true,unselected,0 - printer,click,224,165,0
+data,1972,2,3,3,3,true,unselected,0 - cat,click,224,165,0
+data,2161,2,3,3,3,true,unselected,0 - penguin,click,224,165,0
+data,2353,2,3,3,3,true,unselected,0 - carrot,click,224,165,0
+data,2543,2,3,3,3,true,unselected,0 - zebra,click,224,165,0
+data,2721,2,3,3,3,true,unselected,0 - apple,click,224,165,0
+data,2947,2,3,3,3,true,unselected,0 - pineapple,click,224,165,0
+data,3125,2,3,3,3,true,unselected,0 - paperclip,click,224,165,0
+data,3315,2,3,3,3,true,unselected,0 - pineapple,click,224,165,0
+data,3494,2,3,3,3,true,unselected,0 - penguin,click,224,165,0
+data,3679,2,3,3,3,true,unselected,0 - cat,click,224,165,0
+data,3916,2,3,3,3,true,unselected,0 - apple,click,224,165,0
+data,4088,2,3,3,3,true,unselected,0 - zebra,click,224,165,0
+data,4307,2,3,3,3,true,unselected,0 - paperclip,click,224,165,0
+data,4499,2,3,3,3,true,unselected,0 - printer,click,224,165,0
+data,4678,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,4893,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,197,2,4,1,3,true,unselected,0 - printer,click,224,165,0
+data,387,2,4,1,3,true,unselected,0 - apple,click,224,165,0
+data,1093,2,4,1,3,true,unselected,0 - paperclip,click,224,165,0
+data,1279,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,1476,2,4,1,3,true,unselected,0 - cat,click,224,165,0
+data,1675,2,4,1,3,true,unselected,0 - penguin,click,224,165,0
+data,1840,2,4,1,3,true,unselected,0 - zebra,click,224,165,0
+data,2052,2,4,1,3,true,unselected,0 - pineapple,click,224,165,0
+data,2235,2,4,1,3,true,unselected,0 - paperclip,click,224,165,0
+data,2413,2,4,1,3,true,unselected,0 - pineapple,click,224,165,0
+data,2604,2,4,1,3,true,unselected,0 - penguin,click,224,165,0
+data,2837,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,3012,2,4,1,3,true,unselected,0 - printer,click,224,165,0
+data,3201,2,4,1,3,true,unselected,0 - apple,click,224,165,0
+data,3388,2,4,1,3,true,unselected,0 - cat,click,224,165,0
+data,3567,2,4,1,3,true,unselected,0 - zebra,click,224,165,0
+data,3795,2,4,1,3,true,unselected,0 - penguin,click,224,165,0
+data,3967,2,4,1,3,true,unselected,0 - cat,click,224,165,0
+data,4189,2,4,1,3,true,unselected,0 - printer,click,224,165,0
+data,4376,2,4,1,3,true,unselected,0 - apple,click,224,165,0
+data,4557,2,4,1,3,true,unselected,0 - pineapple,click,224,165,0
+data,4784,2,4,1,3,true,unselected,0 - zebra,click,224,165,0
+data,4925,2,4,1,3,true,unselected,0 - paperclip,click,224,165,0
+data,5114,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,5330,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,5509,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,5714,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,6087,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,6300,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,6483,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,6673,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,6900,2,4,1,3,true,unselected,0 - carrot,click,224,165,0
+data,7080,2,4,1,3,true,unselected,0 - carrot,click,224,165,0

@@ -1,80 +1,42 @@
 log_type,timestamp,participant_id,trial_number,motor_condition,display_condition,menu_condition,current_selection,target_selection,event_type,x,y,angle
-data,9019,1,1,1,2,true,unselected,no_target,click,163,160,0
-data,2462,1,1,1,2,true,icons/images/apple.png,icons/images/paperclip.png,rotary,0,0,15
-data,2730,1,1,1,2,true,icons/images/cat.png,icons/images/paperclip.png,rotary,0,0,30
-data,2936,1,1,1,2,true,icons/images/zebra.png,icons/images/paperclip.png,rotary,0,0,45
-data,3072,1,1,1,2,true,icons/images/printer.png,icons/images/paperclip.png,rotary,0,0,60
-data,3277,1,1,1,2,true,icons/images/paperclip.png,icons/images/paperclip.png,rotary,0,0,75
-data,4059,1,1,1,2,true,icons/images/paperclip.png,icons/images/paperclip.png,click,184,205,0
-data,6293,1,1,1,2,true,icons/images/penguin.png,icons/images/printer.png,rotary,0,0,60
-data,6901,1,1,1,2,true,icons/images/pineapple.png,icons/images/printer.png,rotary,0,0,45
-data,6955,1,1,1,2,true,icons/images/carrot.png,icons/images/printer.png,rotary,0,0,30
-data,7479,1,1,1,2,true,icons/images/paperclip.png,icons/images/printer.png,rotary,0,0,15
-data,7642,1,1,1,2,true,icons/images/printer.png,icons/images/printer.png,rotary,0,0,0
-data,8385,1,1,1,2,true,icons/images/printer.png,icons/images/printer.png,click,229,180,0
-data,9920,1,1,1,2,true,icons/images/apple.png,icons/images/pineapple.png,rotary,0,0,15
-data,10120,1,1,1,2,true,icons/images/cat.png,icons/images/pineapple.png,rotary,0,0,30
-data,10218,1,1,1,2,true,icons/images/zebra.png,icons/images/pineapple.png,rotary,0,0,45
-data,10319,1,1,1,2,true,icons/images/printer.png,icons/images/pineapple.png,rotary,0,0,60
-data,10486,1,1,1,2,true,icons/images/paperclip.png,icons/images/pineapple.png,rotary,0,0,75
-data,11012,1,1,1,2,true,icons/images/carrot.png,icons/images/pineapple.png,rotary,0,0,90
-data,11748,1,1,1,2,true,icons/images/pineapple.png,icons/images/pineapple.png,rotary,0,0,105
-data,12616,1,1,1,2,true,icons/images/pineapple.png,icons/images/pineapple.png,click,257,200,0
-data,14157,1,1,1,2,true,icons/images/penguin.png,icons/images/zebra.png,rotary,0,0,90
-data,14258,1,1,1,2,true,icons/images/pineapple.png,icons/images/zebra.png,rotary,0,0,75
-data,14333,1,1,1,2,true,icons/images/carrot.png,icons/images/zebra.png,rotary,0,0,60
-data,14470,1,1,1,2,true,icons/images/paperclip.png,icons/images/zebra.png,rotary,0,0,45
-data,14641,1,1,1,2,true,icons/images/printer.png,icons/images/zebra.png,rotary,0,0,30
-data,14840,1,1,1,2,true,icons/images/zebra.png,icons/images/zebra.png,rotary,0,0,15
-data,15545,1,1,1,2,true,icons/images/zebra.png,icons/images/zebra.png,click,123,198,0
-data,16944,1,1,1,2,true,icons/images/penguin.png,icons/images/cat.png,rotary,0,0,0
-data,17714,1,1,1,2,true,icons/images/pineapple.png,icons/images/cat.png,rotary,0,0,-15
-data,17920,1,1,1,2,true,icons/images/carrot.png,icons/images/cat.png,rotary,0,0,-30
-data,18052,1,1,1,2,true,icons/images/paperclip.png,icons/images/cat.png,rotary,0,0,-45
-data,18157,1,1,1,2,true,icons/images/printer.png,icons/images/cat.png,rotary,0,0,-60
-data,18256,1,1,1,2,true,icons/images/zebra.png,icons/images/cat.png,rotary,0,0,-75
-data,18478,1,1,1,2,true,icons/images/cat.png,icons/images/cat.png,rotary,0,0,-90
-data,19269,1,1,1,2,true,icons/images/cat.png,icons/images/cat.png,click,198,142,0
-data,21068,1,1,1,2,true,icons/images/apple.png,icons/images/carrot.png,rotary,0,0,-75
-data,21171,1,1,1,2,true,icons/images/cat.png,icons/images/carrot.png,rotary,0,0,-60
-data,21276,1,1,1,2,true,icons/images/zebra.png,icons/images/carrot.png,rotary,0,0,-45
-data,21471,1,1,1,2,true,icons/images/printer.png,icons/images/carrot.png,rotary,0,0,-30
-data,22050,1,1,1,2,true,icons/images/paperclip.png,icons/images/carrot.png,rotary,0,0,-15
-data,79391,1,1,1,2,true,icons/images/carrot.png,icons/images/carrot.png,rotary,0,0,0
-data,80193,1,1,1,2,true,icons/images/carrot.png,icons/images/carrot.png,click,155,176,0
-data,82305,1,1,1,2,true,icons/images/apple.png,icons/images/penguin.png,rotary,0,0,15
-data,82471,1,1,1,2,true,icons/images/cat.png,icons/images/penguin.png,rotary,0,0,30
-data,82847,1,1,1,2,true,icons/images/zebra.png,icons/images/penguin.png,rotary,0,0,45
-data,82945,1,1,1,2,true,icons/images/printer.png,icons/images/penguin.png,rotary,0,0,60
-data,82989,1,1,1,2,true,icons/images/paperclip.png,icons/images/penguin.png,rotary,0,0,75
-data,83023,1,1,1,2,true,icons/images/carrot.png,icons/images/penguin.png,rotary,0,0,90
-data,83099,1,1,1,2,true,icons/images/pineapple.png,icons/images/penguin.png,rotary,0,0,105
-data,84060,1,1,1,2,true,icons/images/penguin.png,icons/images/penguin.png,rotary,0,0,120
-data,84844,1,1,1,2,true,icons/images/penguin.png,icons/images/penguin.png,click,178,195,0
-data,86213,1,1,1,2,true,unselected,icons/images/apple.png,click,170,231,0
-data,87218,1,1,1,2,true,unselected,icons/images/carrot.png,click,185,286,0
-data,87763,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,88266,1,1,1,2,true,unselected,icons/images/cat.png,click,185,286,0
-data,88486,1,1,1,2,true,unselected,icons/images/paperclip.png,click,185,286,0
-data,88638,1,1,1,2,true,unselected,icons/images/penguin.png,click,185,286,0
-data,88792,1,1,1,2,true,unselected,icons/images/zebra.png,click,185,286,0
-data,88980,1,1,1,2,true,unselected,icons/images/apple.png,click,185,286,0
-data,89161,1,1,1,2,true,unselected,icons/images/printer.png,click,185,286,0
-data,89322,1,1,1,2,true,unselected,icons/images/apple.png,click,185,286,0
-data,89473,1,1,1,2,true,unselected,icons/images/zebra.png,click,185,286,0
-data,89660,1,1,1,2,true,unselected,icons/images/cat.png,click,185,286,0
-data,89817,1,1,1,2,true,unselected,icons/images/carrot.png,click,185,286,0
-data,89999,1,1,1,2,true,unselected,icons/images/penguin.png,click,185,286,0
-data,90186,1,1,1,2,true,unselected,icons/images/paperclip.png,click,185,286,0
-data,90371,1,1,1,2,true,unselected,icons/images/printer.png,click,185,286,0
-data,90529,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,90766,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,90923,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,91619,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,91805,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,92018,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,92200,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,92384,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,92577,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,92756,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
-data,92940,1,1,1,2,true,unselected,icons/images/pineapple.png,click,185,286,0
+data,4486,1,1,1,2,true,unselected,no_target,click,181,125,0
+data,2231,1,1,1,2,true,1 - apple,1 - paperclip,rotary,0,0,+15
+data,2376,1,1,1,2,true,2 - cat,2 - paperclip,rotary,0,0,+15
+data,2920,1,1,1,2,true,3 - zebra,3 - paperclip,rotary,0,0,+15
+data,3056,1,1,1,2,true,4 - printer,4 - paperclip,rotary,0,0,+15
+data,3740,1,1,1,2,true,5 - paperclip,5 - paperclip,rotary,0,0,+15
+data,4665,1,1,1,2,true,5 - paperclip,5 - paperclip,click,258,161,0
+data,6284,1,1,1,2,true,8 - penguin,8 - apple,rotary,0,0,-15
+data,6385,1,1,1,2,true,7 - pineapple,7 - apple,rotary,0,0,-15
+data,6931,1,1,1,2,true,6 - carrot,6 - apple,rotary,0,0,-15
+data,7095,1,1,1,2,true,5 - paperclip,5 - apple,rotary,0,0,-15
+data,7916,1,1,1,2,true,4 - printer,4 - apple,rotary,0,0,-15
+data,8183,1,1,1,2,true,3 - zebra,3 - apple,rotary,0,0,-15
+data,8416,1,1,1,2,true,2 - cat,2 - apple,rotary,0,0,-15
+data,9107,1,1,1,2,true,1 - apple,1 - apple,rotary,0,0,-15
+data,10335,1,1,1,2,true,1 - apple,1 - apple,click,177,160,0
+data,47523,1,1,1,2,true,unselected,0 - pineapple,click,136,209,0
+data,47826,1,1,1,2,true,unselected,0 - carrot,click,136,209,0
+data,48135,1,1,1,2,true,unselected,0 - cat,click,136,209,0
+data,48322,1,1,1,2,true,unselected,0 - penguin,click,136,209,0
+data,48505,1,1,1,2,true,unselected,0 - printer,click,136,209,0
+data,48661,1,1,1,2,true,unselected,0 - zebra,click,136,209,0
+data,48846,1,1,1,2,true,unselected,0 - pineapple,click,136,209,0
+data,49031,1,1,1,2,true,unselected,0 - zebra,click,136,209,0
+data,49215,1,1,1,2,true,unselected,0 - penguin,click,136,209,0
+data,49372,1,1,1,2,true,unselected,0 - apple,click,136,209,0
+data,49553,1,1,1,2,true,unselected,0 - carrot,click,136,209,0
+data,49750,1,1,1,2,true,unselected,0 - printer,click,136,209,0
+data,49941,1,1,1,2,true,unselected,0 - paperclip,click,136,209,0
+data,50132,1,1,1,2,true,unselected,0 - cat,click,136,209,0
+data,50341,1,1,1,2,true,unselected,0 - printer,click,136,209,0
+data,50497,1,1,1,2,true,unselected,0 - carrot,click,136,209,0
+data,50711,1,1,1,2,true,unselected,0 - apple,click,136,209,0
+data,50926,1,1,1,2,true,unselected,0 - paperclip,click,136,209,0
+data,51122,1,1,1,2,true,unselected,0 - penguin,click,136,209,0
+data,51293,1,1,1,2,true,unselected,0 - pineapple,click,136,209,0
+data,51475,1,1,1,2,true,unselected,0 - zebra,click,136,209,0
+data,51693,1,1,1,2,true,unselected,0 - cat,click,136,209,0
+data,51876,1,1,1,2,true,unselected,0 - cat,click,136,209,0
+data,52098,1,1,1,2,true,unselected,0 - cat,click,136,209,0
+data,52241,1,1,1,2,true,unselected,0 - cat,click,136,209,0

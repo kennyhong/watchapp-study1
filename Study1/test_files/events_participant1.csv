@@ -1,25 +1,25 @@
 log_type,timestamp,participant_id,trial_number,motor_condition,display_condition,menu_condition,current_selection,target_selection,event_type,x,y,angle
-selection,4078,1,1,1,2,true,icons/images/paperclip.png,icons/images/paperclip.png,correct_selection,184,205,75
-selection,8406,1,1,1,2,true,icons/images/printer.png,icons/images/printer.png,correct_selection,229,180,0
-selection,12633,1,1,1,2,true,icons/images/pineapple.png,icons/images/pineapple.png,correct_selection,257,200,105
-selection,15577,1,1,1,2,true,icons/images/zebra.png,icons/images/zebra.png,correct_selection,123,198,15
-selection,19288,1,1,1,2,true,icons/images/cat.png,icons/images/cat.png,correct_selection,198,142,-90
-selection,80211,1,1,1,2,true,icons/images/carrot.png,icons/images/carrot.png,correct_selection,155,176,0
-selection,84863,1,1,1,2,true,icons/images/penguin.png,icons/images/penguin.png,correct_selection,178,195,120
-penalty,86229,1,1,1,2,true,unselected,icons/images/apple.png,wrong_selection,170,231,120
-penalty,87233,1,1,1,2,true,unselected,icons/images/carrot.png,wrong_selection,185,286,120
-penalty,87778,1,1,1,2,true,unselected,icons/images/pineapple.png,wrong_selection,185,286,120
-penalty,88279,1,1,1,2,true,unselected,icons/images/cat.png,wrong_selection,185,286,120
-penalty,88503,1,1,1,2,true,unselected,icons/images/paperclip.png,wrong_selection,185,286,120
-penalty,88656,1,1,1,2,true,unselected,icons/images/penguin.png,wrong_selection,185,286,120
-penalty,88811,1,1,1,2,true,unselected,icons/images/zebra.png,wrong_selection,185,286,120
-penalty,88992,1,1,1,2,true,unselected,icons/images/apple.png,wrong_selection,185,286,120
-penalty,89200,1,1,1,2,true,unselected,icons/images/printer.png,wrong_selection,185,286,120
-penalty,89335,1,1,1,2,true,unselected,icons/images/apple.png,wrong_selection,185,286,120
-penalty,89491,1,1,1,2,true,unselected,icons/images/zebra.png,wrong_selection,185,286,120
-penalty,89683,1,1,1,2,true,unselected,icons/images/cat.png,wrong_selection,185,286,120
-penalty,89843,1,1,1,2,true,unselected,icons/images/carrot.png,wrong_selection,185,286,120
-penalty,90017,1,1,1,2,true,unselected,icons/images/penguin.png,wrong_selection,185,286,120
-penalty,90215,1,1,1,2,true,unselected,icons/images/paperclip.png,wrong_selection,185,286,120
-penalty,90391,1,1,1,2,true,unselected,icons/images/printer.png,wrong_selection,185,286,120
-penalty,90543,1,1,1,2,true,unselected,icons/images/pineapple.png,wrong_selection,185,286,120
+selection,4683,1,1,1,2,true,5 - paperclip,5 - paperclip,correct_selection,258,161,75
+selection,10374,1,1,1,2,true,1 - apple,1 - apple,correct_selection,177,160,-45
+penalty,47538,1,1,1,2,true,unselected,0 - pineapple,wrong_selection,136,209,-45
+penalty,47846,1,1,1,2,true,unselected,0 - carrot,wrong_selection,136,209,-45
+penalty,48160,1,1,1,2,true,unselected,0 - cat,wrong_selection,136,209,-45
+penalty,48338,1,1,1,2,true,unselected,0 - penguin,wrong_selection,136,209,-45
+penalty,48520,1,1,1,2,true,unselected,0 - printer,wrong_selection,136,209,-45
+penalty,48681,1,1,1,2,true,unselected,0 - zebra,wrong_selection,136,209,-45
+penalty,48865,1,1,1,2,true,unselected,0 - pineapple,wrong_selection,136,209,-45
+penalty,49053,1,1,1,2,true,unselected,0 - zebra,wrong_selection,136,209,-45
+penalty,49231,1,1,1,2,true,unselected,0 - penguin,wrong_selection,136,209,-45
+penalty,49386,1,1,1,2,true,unselected,0 - apple,wrong_selection,136,209,-45
+penalty,49571,1,1,1,2,true,unselected,0 - carrot,wrong_selection,136,209,-45
+penalty,49774,1,1,1,2,true,unselected,0 - printer,wrong_selection,136,209,-45
+penalty,49968,1,1,1,2,true,unselected,0 - paperclip,wrong_selection,136,209,-45
+penalty,50160,1,1,1,2,true,unselected,0 - cat,wrong_selection,136,209,-45
+penalty,50368,1,1,1,2,true,unselected,0 - printer,wrong_selection,136,209,-45
+penalty,50536,1,1,1,2,true,unselected,0 - carrot,wrong_selection,136,209,-45
+penalty,50743,1,1,1,2,true,unselected,0 - apple,wrong_selection,136,209,-45
+penalty,50972,1,1,1,2,true,unselected,0 - paperclip,wrong_selection,136,209,-45
+penalty,51153,1,1,1,2,true,unselected,0 - penguin,wrong_selection,136,209,-45
+penalty,51326,1,1,1,2,true,unselected,0 - pineapple,wrong_selection,136,209,-45
+penalty,51502,1,1,1,2,true,unselected,0 - zebra,wrong_selection,136,209,-45
+penalty,51727,1,1,1,2,true,unselected,0 - cat,wrong_selection,136,209,-45

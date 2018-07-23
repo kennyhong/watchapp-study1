@@ -1,0 +1,99 @@
+log_type,timestamp,participant_id,trial_number,motor_condition,display_condition,menu_condition,current_selection,target_selection,event_type,x,y,angle
+penalty,2532,2,1,1,2,true,4 - printer,1 - zebra,item_overshoot_penalty,0,0,60
+selection,10904,2,1,1,2,true,3 - zebra,1 - zebra,correct_selection,164,177,45
+penalty,47475,2,1,1,2,true,unselected,2 - carrot,wrong_selection,167,11,45
+selection,51971,2,1,1,2,true,2 - cat,3 - cat,correct_selection,170,181,75
+selection,56590,2,1,1,2,true,8 - penguin,4 - penguin,correct_selection,171,236,195
+selection,60183,2,1,1,2,true,7 - pineapple,5 - pineapple,correct_selection,176,205,165
+selection,66075,2,1,1,2,true,4 - printer,6 - printer,correct_selection,159,225,225
+penalty,67203,2,1,1,2,true,unselected,7 - paperclip,wrong_selection,159,225,225
+penalty,67395,2,1,1,2,true,unselected,8 - apple,wrong_selection,159,225,225
+penalty,67587,2,1,1,2,true,unselected,1 - apple,wrong_selection,159,225,225
+penalty,67736,2,1,1,2,true,unselected,2 - pineapple,wrong_selection,159,225,225
+penalty,67949,2,1,1,2,true,unselected,3 - zebra,wrong_selection,159,225,225
+penalty,68119,2,1,1,2,true,unselected,4 - penguin,wrong_selection,159,225,225
+penalty,68306,2,1,1,2,true,unselected,5 - carrot,wrong_selection,159,225,225
+penalty,68461,2,1,1,2,true,unselected,6 - cat,wrong_selection,159,225,225
+penalty,68695,2,1,1,2,true,unselected,7 - paperclip,wrong_selection,159,225,225
+penalty,68836,2,1,1,2,true,unselected,8 - printer,wrong_selection,159,225,225
+penalty,69004,2,1,1,2,true,unselected,1 - pineapple,wrong_selection,159,225,225
+penalty,69236,2,1,1,2,true,unselected,2 - apple,wrong_selection,159,225,225
+penalty,69423,2,1,1,2,true,unselected,3 - paperclip,wrong_selection,159,225,225
+penalty,69611,2,1,1,2,true,unselected,4 - zebra,wrong_selection,159,225,225
+penalty,69839,2,1,1,2,true,unselected,5 - printer,wrong_selection,159,225,225
+penalty,70008,2,1,1,2,true,unselected,6 - penguin,wrong_selection,159,225,225
+penalty,70354,2,1,1,2,true,unselected,7 - carrot,wrong_selection,159,225,225
+penalty,70731,2,2,2,1,false,unselected,8 - cat,wrong_selection,159,225,225
+penalty,32819,2,2,2,1,false,2 - cat,1 - apple,wrong_selection,135,18,-180
+penalty,45070,2,2,2,1,false,unselected,2 - cat,wrong_selection,135,18,-180
+penalty,57946,2,2,2,1,false,unselected,3 - carrot,wrong_selection,132,1,-180
+penalty,90928,2,2,2,1,false,6 - carrot,4 - pineapple,item_overshoot_penalty,0,0,-225
+selection,102399,2,2,2,1,false,7 - pineapple,4 - pineapple,correct_selection,193,189,-450
+penalty,113608,2,2,2,1,false,8 - penguin,5 - paperclip,wrong_selection,224,165,-465
+penalty,113781,2,2,2,1,false,unselected,6 - printer,wrong_selection,224,165,-465
+penalty,113940,2,2,2,1,false,unselected,7 - zebra,wrong_selection,224,165,-465
+penalty,114109,2,2,2,1,false,unselected,8 - penguin,wrong_selection,224,165,-465
+penalty,114243,2,2,2,1,false,unselected,1 - penguin,wrong_selection,224,165,-465
+penalty,114360,2,2,2,1,false,unselected,2 - paperclip,wrong_selection,224,165,-465
+penalty,114538,2,2,2,1,false,unselected,3 - pineapple,wrong_selection,224,165,-465
+penalty,114691,2,2,2,1,false,unselected,4 - apple,wrong_selection,224,165,-465
+penalty,114858,2,2,2,1,false,unselected,5 - zebra,wrong_selection,224,165,-465
+penalty,115019,2,2,2,1,false,unselected,6 - printer,wrong_selection,224,165,-465
+penalty,115179,2,2,2,1,false,unselected,7 - cat,wrong_selection,224,165,-465
+penalty,115349,2,2,2,1,false,unselected,8 - carrot,wrong_selection,224,165,-465
+penalty,115647,2,2,2,1,false,unselected,1 - paperclip,wrong_selection,224,165,-465
+penalty,115850,2,2,2,1,false,unselected,2 - printer,wrong_selection,224,165,-465
+penalty,116006,2,2,2,1,false,unselected,3 - cat,wrong_selection,224,165,-465
+penalty,116368,2,2,2,1,false,unselected,4 - zebra,wrong_selection,224,165,-465
+penalty,116525,2,2,2,1,false,unselected,5 - carrot,wrong_selection,224,165,-465
+penalty,116687,2,2,2,1,false,unselected,6 - penguin,wrong_selection,224,165,-465
+penalty,116875,2,2,2,1,false,unselected,7 - apple,wrong_selection,224,165,-465
+penalty,117027,2,3,3,3,true,unselected,8 - pineapple,wrong_selection,224,165,-465
+penalty,178,2,3,3,3,true,unselected,1 - cat,wrong_selection,224,165,0
+penalty,368,2,3,3,3,true,unselected,2 - carrot,wrong_selection,224,165,0
+penalty,520,2,3,3,3,true,unselected,3 - penguin,wrong_selection,224,165,0
+penalty,770,2,3,3,3,true,unselected,4 - printer,wrong_selection,224,165,0
+penalty,927,2,3,3,3,true,unselected,5 - apple,wrong_selection,224,165,0
+penalty,1089,2,3,3,3,true,unselected,6 - pineapple,wrong_selection,224,165,0
+penalty,1260,2,3,3,3,true,unselected,7 - zebra,wrong_selection,224,165,0
+penalty,1434,2,3,3,3,true,unselected,8 - paperclip,wrong_selection,224,165,0
+penalty,1625,2,3,3,3,true,unselected,1 - printer,wrong_selection,224,165,0
+penalty,2015,2,3,3,3,true,unselected,2 - cat,wrong_selection,224,165,0
+penalty,2190,2,3,3,3,true,unselected,3 - penguin,wrong_selection,224,165,0
+penalty,2380,2,3,3,3,true,unselected,4 - carrot,wrong_selection,224,165,0
+penalty,2561,2,3,3,3,true,unselected,5 - zebra,wrong_selection,224,165,0
+penalty,2734,2,3,3,3,true,unselected,6 - apple,wrong_selection,224,165,0
+penalty,2972,2,3,3,3,true,unselected,7 - pineapple,wrong_selection,224,165,0
+penalty,3150,2,3,3,3,true,unselected,8 - paperclip,wrong_selection,224,165,0
+penalty,3335,2,3,3,3,true,unselected,1 - pineapple,wrong_selection,224,165,0
+penalty,3525,2,3,3,3,true,unselected,2 - penguin,wrong_selection,224,165,0
+penalty,3703,2,3,3,3,true,unselected,3 - cat,wrong_selection,224,165,0
+penalty,3948,2,3,3,3,true,unselected,4 - apple,wrong_selection,224,165,0
+penalty,4109,2,3,3,3,true,unselected,5 - zebra,wrong_selection,224,165,0
+penalty,4336,2,3,3,3,true,unselected,6 - paperclip,wrong_selection,224,165,0
+penalty,4525,2,3,3,3,true,unselected,7 - printer,wrong_selection,224,165,0
+penalty,4708,2,4,1,3,true,unselected,8 - carrot,wrong_selection,224,165,0
+penalty,219,2,4,1,3,true,unselected,1 - printer,wrong_selection,224,165,0
+penalty,417,2,4,1,3,true,unselected,2 - apple,wrong_selection,224,165,0
+penalty,1120,2,4,1,3,true,unselected,3 - paperclip,wrong_selection,224,165,0
+penalty,1310,2,4,1,3,true,unselected,4 - carrot,wrong_selection,224,165,0
+penalty,1501,2,4,1,3,true,unselected,5 - cat,wrong_selection,224,165,0
+penalty,1713,2,4,1,3,true,unselected,6 - penguin,wrong_selection,224,165,0
+penalty,1886,2,4,1,3,true,unselected,7 - zebra,wrong_selection,224,165,0
+penalty,2085,2,4,1,3,true,unselected,8 - pineapple,wrong_selection,224,165,0
+penalty,2260,2,4,1,3,true,unselected,1 - paperclip,wrong_selection,224,165,0
+penalty,2447,2,4,1,3,true,unselected,2 - pineapple,wrong_selection,224,165,0
+penalty,2634,2,4,1,3,true,unselected,3 - penguin,wrong_selection,224,165,0
+penalty,2903,2,4,1,3,true,unselected,4 - carrot,wrong_selection,224,165,0
+penalty,3047,2,4,1,3,true,unselected,5 - printer,wrong_selection,224,165,0
+penalty,3227,2,4,1,3,true,unselected,6 - apple,wrong_selection,224,165,0
+penalty,3410,2,4,1,3,true,unselected,7 - cat,wrong_selection,224,165,0
+penalty,3603,2,4,1,3,true,unselected,8 - zebra,wrong_selection,224,165,0
+penalty,3815,2,4,1,3,true,unselected,1 - penguin,wrong_selection,224,165,0
+penalty,4007,2,4,1,3,true,unselected,2 - cat,wrong_selection,224,165,0
+penalty,4213,2,4,1,3,true,unselected,3 - printer,wrong_selection,224,165,0
+penalty,4404,2,4,1,3,true,unselected,4 - apple,wrong_selection,224,165,0
+penalty,4586,2,4,1,3,true,unselected,5 - pineapple,wrong_selection,224,165,0
+penalty,4812,2,4,1,3,true,unselected,6 - zebra,wrong_selection,224,165,0
+penalty,4953,2,4,1,3,true,unselected,7 - paperclip,wrong_selection,224,165,0
+penalty,5134,2,4,1,3,true,unselected,8 - carrot,wrong_selection,224,165,0
