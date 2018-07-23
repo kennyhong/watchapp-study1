@@ -1,0 +1,4 @@
+participant_id,trial_number,motor_condition,display_condition,eyes_free_condition,id_current_selection,current_selection,id_target_selection,target_selection,target_angle,selection_success,num_overshoots,selection_time,total_rotation_angle
+2,1,1,2,true,2,cat,5,cat,30,true,0,2847,30
+2,2,1,2,true,5,paperclip,4,paperclip,120,true,0,2665,75
+2,3,1,2,true,4,printer,3,printer,90,true,0,2445,60

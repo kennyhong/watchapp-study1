@@ -1,16 +1,18 @@
 "use strict";
 
 var currAngle = 0;
-var currTrial = 1;
+var trialSet = 1;
+var currTrial = 0;
 var conditions = [];
 var documentsDir, dataFile, eventsFile;
 var isMenuVisable = true;
 var participantId = 1;
 var state;
 var currCondition;
-//var totalDate = Date.now();
+
+var overshoots = 0;
+
 var currDate = Date.now();
-//var prevDate = Date.now();
 var ss_num = 0;
 var ss_menus;
 var imgPaths = [ 'icons/images/apple.png', 'icons/images/cat.png',
@@ -25,10 +27,7 @@ var rotationCount = -1;
 
 var turnRight = false;
 
-var targetImagePaths = [ 'icons/images/apple.png', 'icons/images/cat.png',
-		'icons/images/zebra.png', 'icons/images/printer.png',
-		'icons/images/paperclip.png', 'icons/images/carrot.png',
-		'icons/images/pineapple.png', 'icons/images/penguin.png' ];
+var targetImagePaths = [0, 1, 2, 3, 4, 5, 6, 7];
 var currTarget = -1;
 
 var targetRepeats = 0;
@@ -66,7 +65,9 @@ function setupStudy() {
 						+ '.csv');
 				if (dataFile !== null) {
 					dataFile.openStream("w", function(fs) {
-						fs.write("log_type,timestamp,participant_id,trial_number,motor_condition,display_condition,menu_condition,current_selection,target_selection,event_type,x,y,angle\n");
+						fs.write("timestamp,participant_id,trial_number,motor_condition,display_condition,eyes_free_condition," +
+								"id_current_selection,current_selection,id_target_selection,target_selection," +
+								"event_type,x,y,angle,total_angle\n");
 						fs.close();
 					}, function(e) {
 						console.log("Error " + e.message);
@@ -74,11 +75,13 @@ function setupStudy() {
 				}
 				
 				//create new events csv
-				eventsFile = documentsDir.createFile('events_participant' + participantId
-						+ '.csv');
+				eventsFile = documentsDir.createFile('participant' + participantId
+						+ '_summary.csv');
 				if (eventsFile !== null) {
 					eventsFile.openStream("w", function(fs) {
-						fs.write("log_type,timestamp,participant_id,trial_number,motor_condition,display_condition,menu_condition,current_selection,target_selection,event_type,x,y,angle\n");
+						fs.write("participant_id,trial_number,motor_condition,display_condition,eyes_free_condition," +
+								"id_current_selection,current_selection,id_target_selection,target_selection,target_angle," +
+								"selection_success,num_overshoots,selection_time,total_rotation_angle\n");
 						fs.close();
 					}, function(e) {
 						console.log("Error " + e.message);
@@ -96,7 +99,7 @@ function setupStudy() {
 							var condition = {
 									motorCondition: splitContent[i].split(",")[1].replace(/(\r\n|\n|\r)/gm,""), 
 									displayCondition: splitContent[i].split(",")[2].replace(/(\r\n|\n|\r)/gm,""), 
-									menuCondition: splitContent[i].split(",")[3].replace(/(\r\n|\n|\r)/gm,"")
+									eyesFreeCondition: splitContent[i].split(",")[3].replace(/(\r\n|\n|\r)/gm,"")
 							}
 							conditions[i] = condition;
 						}
@@ -172,25 +175,26 @@ function log(data) {
 	var targetItem;
 
 	if (rotationCount > -1) {
-		currItem = (rotationCount + 1) + ' - ' + cleanImageFilePath(imgPaths[rotationCount]);
+		currItem = cleanImageFilePath(imgPaths[rotationCount]);
 	} else {
 		currItem = "unselected";
 	}
 
 	if (currTarget > -1) {
-		targetItem = (rotationCount + 1) + ' - ' +cleanImageFilePath(targetImagePaths[currTarget]);
+		targetItem = cleanImageFilePath(imgPaths[targetImagePaths[currTarget]]);
 	} else {
 		targetItem = "no_target";
 	}
 	if (dataFile !== null) {
 		dataFile.openStream("a", function(fs) {
-			fs.write(data.log_type + "," + data.timestamp + "," + participantId
+			fs.write(data.timestamp + "," + participantId
 					+ "," + currTrial + ","
-					+ conditions[currTrial].motorCondition + ","
-					+ conditions[currTrial].displayCondition + ","
-					+ conditions[currTrial].menuCondition + "," + currItem
+					+ conditions[trialSet].motorCondition + ","
+					+ conditions[trialSet].displayCondition + ","
+					+ conditions[trialSet].eyesFreeCondition + "," 
+					+ data.curr_id + "," + currItem + "," + (targetImagePaths[currTarget] + 1)
 					+ "," + targetItem + "," + data.event_type + "," + data.x
-					+ "," + data.y + "," + data.angle + "\n");
+					+ "," + data.y + "," + data.angle + "," + data.total_angle + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -198,30 +202,41 @@ function log(data) {
 	}
 }
 
-function logEvent(data) {
+function logSummary(data) {
 	var currItem;
 	var targetItem;
+	var targetAngle;
+	
+	if(conditions[trialSet].displayCondition == 1) {
+		targetAngle = targetImagePaths[currTarget] * 15;
+	} else if (conditions[trialSet].displayCondition == 2) {
+		targetAngle = targetImagePaths[currTarget] * 30;
+	} else if (conditions[trialSet].displayCondition == 3) {
+		targetAngle = targetImagePaths[currTarget] * 45;
+	} else {
+		targetAngle = -1;
+	}
 
 	if (rotationCount > -1) {
-		currItem = (rotationCount + 1) + ' - ' + cleanImageFilePath(imgPaths[rotationCount]);
+		currItem =  cleanImageFilePath(imgPaths[rotationCount]);
 	} else {
 		currItem = "unselected";
 	}
 
 	if (currTarget > -1) {
-		targetItem = (currTarget + 1) + ' - ' + cleanImageFilePath(targetImagePaths[currTarget]);
+		targetItem = cleanImageFilePath(imgPaths[targetImagePaths[currTarget]]);
 	} else {
 		targetItem = "no_target";
 	}
 	if (eventsFile !== null) {
 		eventsFile.openStream("a", function(fs) {
-			fs.write(data.log_type + "," + data.timestamp + "," + participantId
-					+ "," + currTrial + ","
-					+ conditions[currTrial].motorCondition + ","
-					+ conditions[currTrial].displayCondition + ","
-					+ conditions[currTrial].menuCondition + "," + currItem	
-					+ "," + targetItem + "," + data.event_type + "," + data.x
-					+ "," + data.y + "," + data.angle + "\n");
+			fs.write(participantId + "," + currTrial + ","
+					+ conditions[trialSet].motorCondition + ","
+					+ conditions[trialSet].displayCondition + ","
+					+ conditions[trialSet].eyesFreeCondition + "," 
+					+ data.selection_id + "," + currItem + "," + data.target_id
+					+ "," + targetItem + "," + targetAngle + "," + data.success + "," + data.num_overshoots + "," + data.timestamp
+					 + "," + data.angle + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -240,29 +255,30 @@ function clickEvent(event) {
 	if(inTrial) {
 		delayMenuAppearance();
 	}
-	console.log(event);
 	var data = {
-		log_type : "data",
 		timestamp : Date.now() - currDate,
 		event_type : event.type,
 		x : event.clientX,
 		y : event.clientY,
-		angle : 0
+		angle : 0,
+		total_angle : 0,
+		curr_id: rotationCount + 1
 	};
-	console.log(data);
 	log(data);
 	console.log("timestamp: " + (Date.now() - currDate) + " type: "
 			+ event.type + " x: " + event.clientX + " y: " + event.clientY);
 	if (inTrial) {
 		selectionCheck(event.clientX, event.clientY);
-	}
+		currTrial++;
+	} 
 	toggleTrial();
+	currDate = Date.now();
+	currAngle = 0;
 }
 
 function toggleTrial() {
 	if (state.innerHTML === "Start") {
 		rotationCount = -1;
-		currAngle = 0;
 		currDate = Date.now();
 		window.addEventListener("rotarydetent", rotaryEventHandler);
 		state.innerHTML = "";
@@ -272,17 +288,17 @@ function toggleTrial() {
 		loadTarget();
 		motorRotationCount = 0;
 		document.querySelector("#ss_menu").style.visibility = "visible";
-		if (conditions[currTrial].menuCondition === "true") {
+		if (conditions[trialSet].eyesFreeCondition === "true") {
 			$('#ss_menu').hide();
 			timeoutHandler = setTimeout(function () {$('#ss_menu').show()}, 1000);
 		}
 		
 	} else if (state.innerHTML !== "Start" && !inTrial) {
 		window.removeEventListener("rotarydetent", rotaryEventHandler);
-		if (currTrial < conditions.length - 1) {
+		if (trialSet < conditions.length - 1) {
 			state.innerHTML = "Start";
-			currTrial++;
-			currCondition.innerHTML = "Motor: " + conditions[currTrial].motorCondition;
+			trialSet++;
+			currCondition.innerHTML = "Motor: " + conditions[trialSet].motorCondition;
 			document.querySelector("#target-img").style.visibility = "hidden";
 			hideMenu();
 		} else {
@@ -315,7 +331,7 @@ function rotaryEventHandler(event) {
 		}
 		currAngle += 15;
 		motorRotationCount++;
-		if (motorRotationConditions[conditions[currTrial].motorCondition - 1] == motorRotationCount) {
+		if (motorRotationConditions[conditions[trialSet].motorCondition - 1] == motorRotationCount) {
 			if (rotationCount !== -1) {
 				prevItem = imgPaths[rotationCount];
 			}
@@ -329,14 +345,13 @@ function rotaryEventHandler(event) {
 			}
 		}
 		data = {
-			log_type : "data",
 			timestamp : Date.now() - currDate,
 			event_type : "rotary",
 			x : 0,
 			y : 0,
-			angle : '+15'
+			angle : '+15',
+			total_angle: currAngle
 		};
-		console.log(motorRotationCount);
 		log(data);
 		console.log("timestamp: " + (Date.now() - currDate) + " type: "
 				+ "rotary" + " current angle: " + currAngle);
@@ -347,7 +362,7 @@ function rotaryEventHandler(event) {
 			turnRight = false;
 		}
 		motorRotationCount++;
-		if (motorRotationConditions[conditions[currTrial].motorCondition - 1] == motorRotationCount) {
+		if (motorRotationConditions[conditions[trialSet].motorCondition - 1] == motorRotationCount) {
 			if (rotationCount !== -1) {
 				var prevItem = imgPaths[rotationCount];
 			}
@@ -362,14 +377,13 @@ function rotaryEventHandler(event) {
 		}
 		currAngle -= 15;
 		data = {
-			log_type : "data",
 			timestamp : Date.now() - currDate,
 			event_type : "rotary",
 			x : 0,
 			y : 0,
-			angle : '-15'
+			angle : '-15',
+			total_angle : currAngle
 		};
-		console.log(motorRotationCount);
 		log(data);
 		console.log("timestamp: " + (Date.now() - currDate) + " type: "
 				+ "rotary" + " current angle: " + currAngle);
@@ -381,16 +395,8 @@ function rotaryEventHandler(event) {
 }
 
 function checkOvershoot(prevItem) {
-	if (prevItem.includes(targetImagePaths[currTarget])) {
-		var data = {
-			log_type : "penalty",
-			timestamp : Date.now() - currDate,
-			event_type : "item_overshoot_penalty",
-			x : 0,
-			y : 0,
-			angle : currAngle
-		};
-		logEvent(data);
+	if (prevItem.includes(imgPaths[targetImagePaths[currTarget]])) {
+		overshoots++;
 	}
 }
 
@@ -398,7 +404,7 @@ function checkOvershoot(prevItem) {
 function setMenuLayout() {
 	ss_menus = document.querySelectorAll('#ss_menu > div');
 	ss_num = ss_menus.length;
-	var ss_seg_ang = displayConditions[conditions[currTrial].displayCondition - 1];
+	var ss_seg_ang = displayConditions[conditions[trialSet].displayCondition - 1];
 	var page_center_x = 180, page_center_y = 180, page_radius = 130;
 
 	for (var ss_itr = 0; ss_itr < ss_menus.length; ss_itr++) {
@@ -437,7 +443,7 @@ function loadTarget() {
 	shuffleTargets();
 	currTarget = 0;
 	var targetImg = document.querySelector("#target-img");
-	targetImg.src = targetImagePaths[currTarget];
+	targetImg.src = imgPaths[targetImagePaths[currTarget]];
 	targetImg.style.visibility = "visible";
 }
 
@@ -447,30 +453,32 @@ function selectionCheck(clickX, clickY) {
 	if (targetImg.includes(selectedPath)) {
 		// Check if block is complete
 		var data = {
-			log_type : "selection",
 			timestamp : Date.now() - currDate,
-			event_type : "correct_selection",
-			x : clickX,
-			y : clickY,
-			angle : currAngle
+			success: true,
+			num_overshoots: overshoots,
+			selection_id: rotationCount + 1,
+			angle : currAngle,
+			target_id : targetImagePaths[currTarget] + 1
 		};
-		logEvent(data);
+		logSummary(data);
 		iterateTarget();
 		motorRotationCount = 0;
+		overshoots = 0;
 		// Log Selection Data
 	} else {
 		// Log penalty, go on to the next item
 		var data = {
-			log_type : "penalty",
 			timestamp : Date.now() - currDate,
-			event_type : "wrong_selection",
-			x : clickX,
-			y : clickY,
-			angle : currAngle
+			success : false,
+			num_overshoots: overshoots,
+			selection_id: rotationCount + 1,
+			angle : currAngle,
+			target_id : targetImagePaths[currTarget] + 1
 		};
-		logEvent(data);
+		logSummary(data);
 		iterateTarget();
 		motorRotationCount = 0;
+		overshoots = 0;
 	}
 }
 	
@@ -485,8 +493,8 @@ function iterateTarget() {
 			currTarget = 0;
 			targetRepeats++;
 		}
-		$("#target-img").attr('src', targetImagePaths[currTarget]);
-		console.log("Current Target: " + targetImagePaths[currTarget]);
+		$("#target-img").attr('src', imgPaths[targetImagePaths[currTarget]]);
+		console.log("Current Target: " + imgPaths[targetImagePaths[currTarget]]);
 	}
 	removeHighlight();
 	rotationCount = -1;
