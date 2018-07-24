@@ -104,7 +104,7 @@ function setupStudy() {
 							conditions[i] = condition;
 						}
 						console.log(conditions);
-						currCondition.innerHTML = "Motor: " + conditions[1].motorCondition + " tick(s) | E-F: " + conditions[trialSet].eyesFreeCondition;
+						currCondition.innerHTML = "Motor: " + conditions[1].motorCondition + " ticks | E-F: " + conditions[trialSet].eyesFreeCondition;
 					});
 				}
 				
@@ -299,7 +299,7 @@ function toggleTrial() {
 		if (trialSet < conditions.length - 1) {
 			state.innerHTML = "Start";
 			trialSet++;
-			currCondition.innerHTML = "Motor: " + conditions[trialSet].motorCondition + " tick(s) | E-F: " + conditions[trialSet].eyesFreeCondition;
+			currCondition.innerHTML = "Motor: " + conditions[trialSet].motorCondition + " ticks | E-F: " + conditions[trialSet].eyesFreeCondition;
 			document.querySelector("#target-img").style.visibility = "hidden";
 			hideMenu();
 		} else {

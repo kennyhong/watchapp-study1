@@ -1,2 +1,4 @@
 trial_id,motorCondition,displayCondition,menuCondition
-3,2,2,true
+1,1,1,false
+2,2,2,false
+3,3,3,true
