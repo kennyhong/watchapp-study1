@@ -104,7 +104,7 @@ function setupStudy() {
 							conditions[i] = condition;
 						}
 						console.log(conditions);
-						currCondition.innerHTML = "Motor: " + conditions[1].motorCondition + " tick(s)";
+						currCondition.innerHTML = "Motor: " + conditions[1].motorCondition + " tick(s) | E-F: " + conditions[trialSet].eyesFreeCondition;
 					});
 				}
 				
@@ -288,6 +288,7 @@ function toggleTrial() {
 		loadTarget();
 		motorRotationCount = 0;
 		document.querySelector("#ss_menu").style.visibility = "visible";
+		highLight(rotationCount, ss_menus);
 		if (conditions[trialSet].eyesFreeCondition === "true") {
 			$('#ss_menu').hide();
 			timeoutHandler = setTimeout(function () {$('#ss_menu').show()}, 1000);
@@ -298,7 +299,7 @@ function toggleTrial() {
 		if (trialSet < conditions.length - 1) {
 			state.innerHTML = "Start";
 			trialSet++;
-			currCondition.innerHTML = "Motor: " + conditions[trialSet].motorCondition;
+			currCondition.innerHTML = "Motor: " + conditions[trialSet].motorCondition + " tick(s) | E-F: " + conditions[trialSet].eyesFreeCondition;
 			document.querySelector("#target-img").style.visibility = "hidden";
 			hideMenu();
 		} else {
@@ -498,6 +499,7 @@ function iterateTarget() {
 	}
 	removeHighlight();
 	rotationCount = 0;
+	highLight(rotationCount, ss_menus);
 }
 
 function shuffleTargets() {
