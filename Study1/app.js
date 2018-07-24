@@ -23,7 +23,7 @@ var inTrial = false;
 var motorRotationConditions = [ 1, 2, 3 ];
 var motorRotationCount = 0;
 var displayConditions = [ (Math.PI / 12), (Math.PI / 6), (Math.PI / 4) ];
-var rotationCount = -1;
+var rotationCount = 0;
 
 var turnRight = false;
 
@@ -278,7 +278,7 @@ function clickEvent(event) {
 
 function toggleTrial() {
 	if (state.innerHTML === "Start") {
-		rotationCount = -1;
+		rotationCount = 0;
 		currDate = Date.now();
 		window.addEventListener("rotarydetent", rotaryEventHandler);
 		state.innerHTML = "";
@@ -497,7 +497,7 @@ function iterateTarget() {
 		console.log("Current Target: " + imgPaths[targetImagePaths[currTarget]]);
 	}
 	removeHighlight();
-	rotationCount = -1;
+	rotationCount = 0;
 }
 
 function shuffleTargets() {
