@@ -11,14 +11,16 @@ var state;
 var currCondition;
 
 var overshoots = 0;
+var firstRotationTime;
+var firstRotationBool = false;
 
 var currDate = Date.now();
 var ss_num = 0;
 var ss_menus;
-var imgPaths = [ 'icons/images/apple.png', 'icons/images/cat.png',
-		'icons/images/zebra.png', 'icons/images/printer.png',
-		'icons/images/paperclip.png', 'icons/images/carrot.png',
-		'icons/images/pineapple.png', 'icons/images/penguin.png' ];
+var imgPaths = [ 'icons/images/frog.png', 'icons/images/dog.png',
+		'icons/images/fish.png', 'icons/images/pigeon.png',
+		'icons/images/cat.png', 'icons/images/zebra.png',
+		'icons/images/dolphin.png', 'icons/images/penguin.png' ];
 var inTrial = false;
 var motorRotationConditions = [ 1, 2, 3 ];
 var motorRotationCount = 0;
@@ -81,7 +83,7 @@ function setupStudy() {
 					eventsFile.openStream("w", function(fs) {
 						fs.write("participant_id,trial_number,motor_condition,display_condition,eyes_free_condition," +
 								"id_current_selection,current_selection,id_target_selection,target_selection,target_angle," +
-								"selection_success,num_overshoots,selection_time,total_rotation_angle\n");
+								"selection_success,num_overshoots,selection_time,first_rotation_time,total_rotation_angle\n");
 						fs.close();
 					}, function(e) {
 						console.log("Error " + e.message);
@@ -189,10 +191,10 @@ function log(data) {
 		dataFile.openStream("a", function(fs) {
 			fs.write(data.timestamp + "," + participantId
 					+ "," + currTrial + ","
-					+ conditions[trialSet].motorCondition + ","
-					+ conditions[trialSet].displayCondition + ","
-					+ conditions[trialSet].eyesFreeCondition + "," 
-					+ data.curr_id + "," + currItem + "," + (targetImagePaths[currTarget] + 1)
+					+ "motor_" + data.curr_motor + ","
+					+ "display_" + data.curr_display + ","
+					+ data.curr_ef  + "," 
+					+ data.selection_id + "," + currItem + "," + data.target_id
 					+ "," + targetItem + "," + data.event_type + "," + data.x
 					+ "," + data.y + "," + data.angle + "," + data.total_angle + "\n");
 			fs.close();
@@ -231,12 +233,12 @@ function logSummary(data) {
 	if (eventsFile !== null) {
 		eventsFile.openStream("a", function(fs) {
 			fs.write(participantId + "," + currTrial + ","
-					+ conditions[trialSet].motorCondition + ","
-					+ conditions[trialSet].displayCondition + ","
-					+ conditions[trialSet].eyesFreeCondition + "," 
+					+ "motor_" + data.curr_motor + ","
+					+ "display_" + data.curr_display + ","
+					+ data.curr_ef + "," 
 					+ data.selection_id + "," + currItem + "," + data.target_id
 					+ "," + targetItem + "," + targetAngle + "," + data.success + "," + data.num_overshoots + "," + data.timestamp
-					 + "," + data.angle + "\n");
+					 + "," + firstRotationTime + "," + data.angle + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -262,7 +264,11 @@ function clickEvent(event) {
 		y : event.clientY,
 		angle : 0,
 		total_angle : 0,
-		curr_id: rotationCount + 1
+		selection_id: rotationCount + 1,
+		target_id : targetImagePaths[currTarget] + 1,
+		curr_motor: conditions[trialSet].motorCondition,
+		curr_display: conditions[trialSet].displayCondition,
+		curr_ef: conditions[trialSet].eyesFreeCondition
 	};
 	log(data);
 	console.log("timestamp: " + (Date.now() - currDate) + " type: "
@@ -289,7 +295,7 @@ function toggleTrial() {
 		motorRotationCount = 0;
 		document.querySelector("#ss_menu").style.visibility = "visible";
 		highLight(rotationCount, ss_menus);
-		if (conditions[trialSet].eyesFreeCondition === "true") {
+		if (conditions[trialSet].eyesFreeCondition === "true" || conditions[trialSet].eyesFreeCondition === "TRUE") {
 			$('#ss_menu').hide();
 			timeoutHandler = setTimeout(function () {$('#ss_menu').show()}, 1000);
 		}
@@ -325,6 +331,10 @@ function rotaryEventHandler(event) {
 	if(inTrial) {
 		delayMenuAppearance();
 	}
+	if(inTrial && !firstRotationBool) {
+		firstRotationTime = Date.now() - currDate;
+		firstRotationBool = true;
+	}
 	if (direction === 'CW') {
 		if (motorRotationCount > -1 && !turnRight) {
 			motorRotationCount = 0
@@ -351,7 +361,12 @@ function rotaryEventHandler(event) {
 			x : 0,
 			y : 0,
 			angle : '+15',
-			total_angle: currAngle
+			total_angle: currAngle,
+			selection_id: rotationCount + 1,
+			target_id : targetImagePaths[currTarget] + 1,
+			curr_motor: conditions[trialSet].motorCondition,
+			curr_display: conditions[trialSet].displayCondition,
+			curr_ef: conditions[trialSet].eyesFreeCondition
 		};
 		log(data);
 		console.log("timestamp: " + (Date.now() - currDate) + " type: "
@@ -383,7 +398,12 @@ function rotaryEventHandler(event) {
 			x : 0,
 			y : 0,
 			angle : '-15',
-			total_angle : currAngle
+			total_angle : currAngle,
+			selection_id: rotationCount + 1,
+			target_id : targetImagePaths[currTarget] + 1,
+			curr_motor: conditions[trialSet].motorCondition,
+			curr_display: conditions[trialSet].displayCondition,
+			curr_ef: conditions[trialSet].eyesFreeCondition
 		};
 		log(data);
 		console.log("timestamp: " + (Date.now() - currDate) + " type: "
@@ -459,12 +479,16 @@ function selectionCheck(clickX, clickY) {
 			num_overshoots: overshoots,
 			selection_id: rotationCount + 1,
 			angle : currAngle,
-			target_id : targetImagePaths[currTarget] + 1
+			target_id : targetImagePaths[currTarget] + 1,
+			curr_motor: conditions[trialSet].motorCondition,
+			curr_display: conditions[trialSet].displayCondition,
+			curr_ef: conditions[trialSet].eyesFreeCondition
 		};
 		logSummary(data);
 		iterateTarget();
 		motorRotationCount = 0;
 		overshoots = 0;
+		firstRotationBool = false;
 		// Log Selection Data
 	} else {
 		// Log penalty, go on to the next item
@@ -474,12 +498,16 @@ function selectionCheck(clickX, clickY) {
 			num_overshoots: overshoots,
 			selection_id: rotationCount + 1,
 			angle : currAngle,
-			target_id : targetImagePaths[currTarget] + 1
+			target_id : targetImagePaths[currTarget] + 1,
+			curr_motor: conditions[trialSet].motorCondition,
+			curr_display: conditions[trialSet].displayCondition,
+			curr_ef: conditions[trialSet].eyesFreeCondition
 		};
 		logSummary(data);
 		iterateTarget();
 		motorRotationCount = 0;
 		overshoots = 0;
+		firstRotationBool = false;
 	}
 }
 	

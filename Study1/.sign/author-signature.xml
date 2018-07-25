@@ -8,7 +8,7 @@
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>K56FrEXk2XRCHA8252TMAq6NDG8STiFSTobWxKlh6Xk=</DigestValue>
+<DigestValue>wCzB/eUoRUa1uWmwFMmGabBQVyHl5FsGZe1U8JhqngM=</DigestValue>
 </Reference>
 <Reference URI="circle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -20,7 +20,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0kK37rCgk1QwfY+VMAD+s7Ea30UI+/mFog2fjqfXFYY=</DigestValue>
+<DigestValue>RV5jEjjeoJ3hpimjBiRg+8xP++Nofd6wr1Qk3veFFJg=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1486,6 +1486,18 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>DrGUJdwlgIA0u+iv+XJcWwlltKygDdBZdHhavaOs8/A=</DigestValue>
 </Reference>
+<Reference URI="test_files%2Fparticipant1.csv">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>AyHY5e4wuLyrjBd4lwBK9vf0yp3nfuTuuqt9LaAExNU=</DigestValue>
+</Reference>
+<Reference URI="test_files%2Fparticipant1_summary.csv">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Hf6GnLGzYwVgKnateP14r9hvB2lLhS4gwIErmnLK9L0=</DigestValue>
+</Reference>
+<Reference URI="test_files%2Fparticipant2_summary.csv">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>N3LdLPxege8W7YrfzHJtLb88KImRVokbLb+0Nn0/Lco=</DigestValue>
+</Reference>
 <Reference URI="test_files%2Fstudy.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>Ub4rOjs/FtzfMNxnW8FUL75MS00P7WOWhEs8z1BxrG8=</DigestValue>
@@ -1511,11 +1523,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-dzIQfkSbPopcp3iYcQBK7p7y1MRG7fYwk1aDWEyPGQBK1PSWdjipyH80e2o+N3MH4rLBF7MEaqkx
-/89tgGPyCcocpJ+vDStHocMMgWHCvnfQ8jgzasmz7thnZcc50HUrOgm4eEPRUE7deUlMmJnppmY6
-+h7dbDf8HoVuXIP8czdrTXJOe8Oi5p0X8Zbbljnt5opIU10OkOaio50fXRZqVhOPFPdCfKnx8tpq
-HPyc3XwMzeTZJTN0oubu/bjsPp7XocuIUBqqtWf2kjUWp2xtRKvxKR95USqpfgdikY0DyPUFyDFN
-rMW8IngEipPrRhULrBKgYZTCYieynWqtUMdisA==
+gn6DpgIFJwMVd+OxziSn+tJJ/b7+m8UMKhMolRAasGgGJmMZikTNHNwL6yhixRAZEo8a5FmWyItu
+1TfJnNtvGZzsy2T+/wuhVkrNpm7/k7LIm1bWaKgZ7oobGHplshxNAR7hYWmWu4990pz7J6doTGnf
+94QcIHpkIv0RD3V+I/19CLqiw+MqAQ/kvK47rbL3zH7C+cjB4KffZ2fROvzLBhWoRQv+zmidxLOf
+tKTSKvFcvdy4WbHBoUyPwIBF8hrTwWAwIHw2EjVVPVk74gSb/rhtYnsNXCC3uHLAh2aunASfuWDF
+qaPuIm2p1fzfFV1dEvKfXgQvwLcGqWbCtxg2Rg==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
