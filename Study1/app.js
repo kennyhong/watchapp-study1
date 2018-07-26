@@ -11,7 +11,7 @@ var state;
 var currCondition;
 
 var overshoots = 0;
-var firstRotationTime;
+var firstRotationTime = -1;
 var firstRotationBool = false;
 
 var currDate = Date.now();
