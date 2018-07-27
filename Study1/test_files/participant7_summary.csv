@@ -1,7 +1,0 @@
-participant_id,trial_number,motor_condition,visual_condition,id_current_selection,current_selection,id_target_selection,target_selection,target_angle,selection_success,num_overshoots,selection_time,first_rotation_time,total_rotation_angle
-7,1,motor_1,visual_2,1,frog,5,cat,120,false,0,2553,-1,0
-7,2,motor_1,visual_2,1,frog,3,fish,60,false,0,1186,-1,0
-7,3,motor_1,visual_2,1,frog,6,zebra,150,false,0,1171,-1,0
-7,4,motor_1,visual_2,1,frog,7,dolphin,180,false,0,1081,-1,0
-7,5,motor_1,visual_2,1,frog,4,pigeon,90,false,0,984,-1,0
-7,6,motor_1,visual_2,1,frog,8,penguin,210,false,0,898,-1,0
