@@ -11,7 +11,11 @@ var documentsDir, dataFile, eventsFile;
 var isMenuVisable = true;
 var participantId = 0;
 var state;
+var failFeedback;
+var successFeedback;
 
+var num_cw = 0;
+var num_ccw = 0;
 
 var overshoots = 0;
 var firstRotationTime = -1;
@@ -107,9 +111,9 @@ function setupStudy() {
 						+ '.csv');
 				if (dataFile !== null) {
 					dataFile.openStream("w", function(fs) {
-						fs.write("timestamp,participant_id,trial_number,motor_condition,visual_condition," +
+						fs.write("timestamp,participant_id,trial_number,block,motor_condition,visual_condition," +
 								"id_current_selection,current_selection,id_target_selection,target_selection," +
-								"event_type,x,y,angle,total_angle\n");
+								"event_type,x,y,angle,total_angle,num_+15,num_-15\n");
 						fs.close();
 					}, function(e) {
 						console.log("Error " + e.message);
@@ -121,9 +125,9 @@ function setupStudy() {
 						+ '_summary.csv');
 				if (eventsFile !== null) {
 					eventsFile.openStream("w", function(fs) {
-						fs.write("participant_id,trial_number,motor_condition,visual_condition," +
+						fs.write("participant_id,trial_number,block,motor_condition,visual_condition," +
 								"id_current_selection,current_selection,id_target_selection,target_selection,target_angle," +
-								"selection_success,num_overshoots,selection_time,first_rotation_time,total_rotation_angle\n");
+								"selection_success,num_overshoots,selection_time,first_rotation_time,total_rotation_angle,num_+15,num_-15\n");
 						fs.close();
 					}, function(e) {
 						console.log("Error " + e.message);
@@ -233,12 +237,12 @@ function log(data) {
 	if (dataFile !== null) {
 		dataFile.openStream("a", function(fs) {
 			fs.write(data.timestamp + "," + participantId
-					+ "," + currTrial + ","
+					+ "," + currTrial + "," + data.curr_block + ","
 					+ "motor_" + data.curr_motor + ","
 					+ "visual_" + data.curr_visual + ","
 					+ data.selection_id + "," + currItem + "," + data.target_id
 					+ "," + targetItem + "," + data.event_type + "," + data.x
-					+ "," + data.y + "," + data.angle + "," + data.total_angle + "\n");
+					+ "," + data.y + "," + data.angle + "," + data.total_angle + "," + num_cw + "," + num_ccw + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -274,12 +278,12 @@ function logSummary(data) {
 	}
 	if (eventsFile !== null) {
 		eventsFile.openStream("a", function(fs) {
-			fs.write(participantId + "," + currTrial + ","
+			fs.write(participantId + "," + currTrial + "," + data.curr_block + ","
 					+ "motor_" + data.curr_motor + ","
 					+ "visual_" + data.curr_visual + ","
 					+ data.selection_id + "," + currItem + "," + data.target_id
 					+ "," + targetItem + "," + targetAngle + "," + data.success + "," + data.num_overshoots + "," + data.timestamp
-					 + "," + firstRotationTime + "," + data.angle + "\n");
+					 + "," + firstRotationTime + "," + data.angle + "," + data.num_pos15 + "," + data.num_neg15 + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -308,7 +312,8 @@ function clickEvent(event) {
 		selection_id: rotationCount + 1,
 		target_id : trials[currTrial].target,
 		curr_motor: trials[currTrial].motorCondition,
-		curr_visual: trials[currTrial].visualCondition
+		curr_visual: trials[currTrial].visualCondition,
+		curr_block: trials[currTrial].blockNum
 		// curr_ef: trials[currTrial].eyesFreeCondition
 	};
 	log(data);
@@ -325,6 +330,8 @@ function clickEvent(event) {
 function toggleTrial() {
 	if (state.innerHTML === "Start") {
 		rotationCount = 0;
+		num_cw = 0;
+		num_ccw = 0;
 		currDate = Date.now();
 		window.addEventListener("rotarydetent", rotaryEventHandler);
 		state.innerHTML = "";
@@ -377,6 +384,7 @@ function rotaryEventHandler(event) {
 		firstRotationBool = true;
 	}
 	if (direction === 'CW') {
+		num_cw++;
 		if (motorRotationCount > -1 && !turnRight) {
 			motorRotationCount = 0
 			turnRight = true;
@@ -406,7 +414,8 @@ function rotaryEventHandler(event) {
 			selection_id: rotationCount + 1,
 			target_id : trials[currTrial].target,
 			curr_motor: trials[currTrial].motorCondition,
-			curr_visual: trials[currTrial].visualCondition
+			curr_visual: trials[currTrial].visualCondition,
+			curr_block: trials[currTrial].blockNum
 			//curr_ef: conditions[trialSet].eyesFreeCondition
 		};
 		log(data);
@@ -414,6 +423,7 @@ function rotaryEventHandler(event) {
 				+ "rotary" + " current angle: " + currAngle);
 
 	} else if (direction === 'CCW') {
+		num_ccw++;
 		if (motorRotationCount > -1 && turnRight) {
 			motorRotationCount = 0
 			turnRight = false;
@@ -443,7 +453,8 @@ function rotaryEventHandler(event) {
 			selection_id: rotationCount + 1,
 			target_id : trials[currTrial].target,
 			curr_motor: trials[currTrial].motorCondition,
-			curr_visual: trials[currTrial].visualCondition
+			curr_visual: trials[currTrial].visualCondition,
+			curr_block: trials[currTrial].blockNum
 			//curr_ef: conditions[trialSet].eyesFreeCondition
 		};
 		log(data);
@@ -513,6 +524,7 @@ function selectionCheck(clickX, clickY) {
 	var targetImg = document.querySelector("#target-img").src;
 	var selectedPath = imgPaths[conditionNum][rotationCount];
 	if (targetImg.includes(selectedPath)) {
+		successFeedback.play();
 		// Check if block is complete
 		var data = {
 			timestamp : Date.now() - currDate,
@@ -522,7 +534,10 @@ function selectionCheck(clickX, clickY) {
 			angle : currAngle,
 			target_id : trials[currTrial].target,
 			curr_motor: trials[currTrial].motorCondition,
-			curr_visual: trials[currTrial].visualCondition
+			curr_visual: trials[currTrial].visualCondition,
+			curr_block: trials[currTrial].blockNum,
+			num_pos15: num_cw,
+			num_neg15: num_ccw
 			//curr_ef: trials[currTrial].eyesFreeCondition
 		};
 		logSummary(data);
@@ -532,6 +547,7 @@ function selectionCheck(clickX, clickY) {
 		firstRotationBool = false;
 		// Log Selection Data
 	} else {
+		failFeedback.play();
 		// Log penalty, go on to the next item
 		var data = {
 			timestamp : Date.now() - currDate,
@@ -541,7 +557,10 @@ function selectionCheck(clickX, clickY) {
 			angle : currAngle,
 			target_id : trials[currTrial].target,
 			curr_motor: trials[currTrial].motorCondition,
-			curr_visual: trials[currTrial].visualCondition
+			curr_visual: trials[currTrial].visualCondition,
+			curr_block: trials[currTrial].blockNum,
+			num_pos15: num_cw,
+			num_neg15: num_ccw
 			//curr_ef: conditions[trialSet].eyesFreeCondition
 		};
 		logSummary(data);
@@ -567,6 +586,8 @@ function iterateTarget() {
 	
 	removeHighlight();
 	rotationCount = 0;
+	num_cw = 0;
+	num_ccw = 0;
 	highLight(rotationCount, ss_menus);
 }
 //
@@ -586,6 +607,8 @@ function iterateTarget() {
 
 window.onload = function() {
 	state = document.getElementById("trial-state");
+	failFeedback = document.getElementById("fail");
+	successFeedback = document.getElementById("success");
 	document.querySelector("#target-img").style.visibility = "hidden";
 	setupStudy();
 	currCondition = document.getElementById("trial-condition");

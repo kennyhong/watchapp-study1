@@ -8,7 +8,7 @@
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>kc6nRz7vI/1MhImH5QnsQhTSsX1nOYZGIuK65NVcoMQ=</DigestValue>
+<DigestValue>eFvrsYXpin0vrU/PkiiouS2Ox8Oy+r8sjt6MSDMs20w=</DigestValue>
 </Reference>
 <Reference URI="circle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -328,7 +328,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Gz+rJx+wNVyZZxhrNfS9Yi1hbZI6ZZ60Q7r5YWP3qrI=</DigestValue>
+<DigestValue>YSQNb5q1uTM19gYJhBmsASz2gGn/hZPSX2DQfK98OQA=</DigestValue>
 </Reference>
 <Reference URI="js%2Fjquery-3.3.1.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -337,6 +337,14 @@
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>0oc6DiyrAj1HQFcu+27/BHCQKn3zBn9dKls96iQZ564=</DigestValue>
+</Reference>
+<Reference URI="lib%2Ffailure.wav">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>84uhbMiiFmUGWLSHOr/qlwbm9KC535fJP+d/4iduLQ4=</DigestValue>
+</Reference>
+<Reference URI="lib%2Fsuccess.wav">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>WloqokNfKXzRr5EfpevF1kZirq7XKziYGqUr21AAgFk=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1464,7 +1472,7 @@
 </Reference>
 <Reference URI="test_files%2F.DS_Store">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/c3tZzFOZxLcCnBI7nw+3yNCXsprMjP1IKxOIOa+EOA=</DigestValue>
+<DigestValue>I921K9Zs2E1cKI1Xtp94xOiT5GbfL0OqAmvnbbF9qfU=</DigestValue>
 </Reference>
 <Reference URI="test_files%2F.idea%2Fmisc.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1486,53 +1494,21 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>O4UNSBPcp/8CS6KlktemkCGfouTHdLpRekgu9u0Q1uY=</DigestValue>
 </Reference>
-<Reference URI="test_files%2Fparticipant0.csv">
+<Reference URI="test_files%2Fparticipant14.csv">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>TGrzri2oSLUxsjR8XEHp2JLSfrFfDUcm87TjIJ7ZRxs=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant0_summary.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Ad+js0oezLJCGDr0yZv+ONRf1qnk/QedHP4knQvO6TQ=</DigestValue>
+<DigestValue>8pWIN+6EvPhuJjyq3y7UzkAQFqu347+UZiEN9TPfvKY=</DigestValue>
 </Reference>
 <Reference URI="test_files%2Fparticipant14_summary.csv">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>9wI1T1bksJK40DkhJTO7wIcGEGRVp5dJLQ6E5EeHt5A=</DigestValue>
+<DigestValue>H9oNpPsY9vfQwaijjZ8yCh2xACnQSi8OfAUeSDeiO4g=</DigestValue>
+</Reference>
+<Reference URI="test_files%2Fparticipant15.csv">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>icbMhadhT/Lb66YdoRM+JTL/nCDiw2pG4rXmK0ojgC8=</DigestValue>
 </Reference>
 <Reference URI="test_files%2Fparticipant15_summary.csv">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>C2HUe0jXolHWXdRJTVO81APl11XCu7hqsTrw66gK5nU=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant17.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>L9IRCOE1KYCDzEQZufeTdNZzE6vfNUZ6jDtJamELRo4=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant17_summary.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>s03UsXg1ttezUllCTUpojcMJfBV4pxHFSL/yepEvgAk=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant2.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>K7ocDQe3U15M9ZW1d6kiOtVdpPv/fk7Mgwc8dMEQARI=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant2_summary.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>iNQNDQuKQ9M/9uX3TAhU8hORrhDkMUqhCH/Il39Bv8A=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant4.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BfL/o9A1+OONu9mezqStht1pZCeOZ9V1ve6KXY/GvRw=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant4_summary.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>7UtpSHHrqTwGISe3yXNislLLE/mLIf4ZbwtW7PtC5n4=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant6.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BWcJVo7U69TFJ0HEAl0tNAzbSOW909S4e1LCirHtRoc=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant6_summary.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0lwBCVy64x/nJ4hjFcLpbBHCrzDkwm+MxZIljfnZEwU=</DigestValue>
+<DigestValue>BmhVRslpF33DSgRT8iDciGTcaTYgM514Q6E6ocHRKYU=</DigestValue>
 </Reference>
 <Reference URI="test_files%2Fstudy.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1610,11 +1586,7 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>LsWEYFtoGdbNUP8MRhJ+FeU+vN0wmeoxy2R5kzM4bvY=</DigestValue>
 </Reference>
-<Reference URI="test_files%2Funtitled.sh">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>RVh24+j/by+hHNNsIt1coDVQYQU2/7us+uT08b3cti0=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fwatch_cdg_final.csv">
+<Reference URI="test_files%2Fstudy_setup%2Fwatch_cdg_final.csv">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>KTHGaKi421jEOZNaVjjkKgXfGy80Qf4tDQdv4g2S4Fc=</DigestValue>
 </Reference>
@@ -1627,11 +1599,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-KGqMn9j60Sb3d9DvQEM1B24pl8shSQ6kKo3CsLLUYAwLNSI8dRzxqb1Ck4pKzqLxvfb/nRUYqfbb
-2hDAQMka5tzkOVuPQHdjeGP0ahvZP74b+kF0dyv6dfaJmynw6ZhAohfL/JHjs7oLVl9P/atnmT/L
-FU224xnb02eH74IqV0KCsuhjWYBbQhV2ecaUG8selqcW8YcHzAgIt/laxEMMS9SWDns93U2c+woF
-DJn1Z0wEEnoNFGtLrHZIgfOW8ul+V1B61iLt/qmmnZOwJLay/gGY3adT6V9yVeBLgWRuZN8MuBw8
-gNlneW4NYReZzYQdSq4CEGiP31JAbVOYVcpuQw==
+OVFOXQIonAQVrX75MuqHCIVlwMg7m8cTUoK/qKgQt7agTvMlXY8amuESgDadswAQZcx2O5yxG4jN
+NHGLhkTF+qApgFGd7nR83pu24nWUi2FaLInNSLvaSkE8DTXQy5v9V65yW+WQ/ulov/tcZ4n52Yjn
+GbyAYxaQSGpksFhGk50ILpf4fgpW3fQlUBbyv5bLK4u2vt1m5BrARzHrncQWbiFCYwjvKCUUJ5bx
+2rIcOThNiw9v2jYtE/YtPlr49imk36+iyKKqosOd5h8w25EmUCVgFvugGi1vRMxOnfQ8fSDYHMPQ
+IF4MRxXo54QrR5IohQgKZ/VfwnE2rlEIoCrcYw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
