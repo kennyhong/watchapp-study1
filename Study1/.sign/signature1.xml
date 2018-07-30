@@ -8,11 +8,11 @@
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>eFvrsYXpin0vrU/PkiiouS2Ox8Oy+r8sjt6MSDMs20w=</DigestValue>
+<DigestValue>feKC8CGyVxDy2MWFwG+N1yJ2n5JINdvU19hcguMfwyE=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>XRs2ZuNhIl94Ld4Gxm5c+N3ZBzWIzgZcfqkxin0a2Dg=</DigestValue>
+<DigestValue>AWEonB502vhe8Rifa2MtTmUI/Rt5+wz1kvJop3r4AJw=</DigestValue>
 </Reference>
 <Reference URI="circle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -153,6 +153,38 @@
 <Reference URI="icons%2Fimages%2Fenvelope.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>9qMAFxtetyvNUvF+YPoi9FbXWy//XkmSYaxQxD+GLKY=</DigestValue>
+</Reference>
+<Reference URI="icons%2Fimages%2Ffa-address.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>s58XGOk5nODoX0w2ek65IJ8cVjQU8ldGyBaaIkywLQQ=</DigestValue>
+</Reference>
+<Reference URI="icons%2Fimages%2Ffa-anchor.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>NLpZ0Egg6BOd2waWmvbcK+CaHGvdP2+8siHzTbdkOoY=</DigestValue>
+</Reference>
+<Reference URI="icons%2Fimages%2Ffa-bike.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>GY6X0DZ0QQMfbC5TJFQuUywYuu8xsTSbK4hztSDMgNY=</DigestValue>
+</Reference>
+<Reference URI="icons%2Fimages%2Ffa-bolt.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>zbQwFyTw2zk09i6C7vrfevhAriQy1BqWP6aGAk5fQ8c=</DigestValue>
+</Reference>
+<Reference URI="icons%2Fimages%2Ffa-calculator.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Jhj0ZJQvJdkVZ78oHt13S7g1mQKNbJFxT2kQSVj1vT0=</DigestValue>
+</Reference>
+<Reference URI="icons%2Fimages%2Ffa-calendar.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>CETAo8E51KJf4beBES66qnMYikfIh3M/qgdCnISHX60=</DigestValue>
+</Reference>
+<Reference URI="icons%2Fimages%2Ffa-msg.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>qKM7sNe6KH/5UZOL8jp5IQ2YesYEpf2R9p3jpNGbYCk=</DigestValue>
+</Reference>
+<Reference URI="icons%2Fimages%2Ffa-scale.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>xdw+6zBVe/14Ojbz5jlmrrnDh9f9VR2RfvjOFM0Z8OY=</DigestValue>
 </Reference>
 <Reference URI="icons%2Fimages%2Ffish.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1492,27 +1524,11 @@
 </Reference>
 <Reference URI="test_files%2F.idea%2Fworkspace.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>c74PgVqG1J37lnL61fiVdGiKcFgHMt9j/SzzfG7MatM=</DigestValue>
+<DigestValue>/ls0IZRVMeB6VSCYQK0KYax4dY/lkzOhDpOa1Ya/uGE=</DigestValue>
 </Reference>
 <Reference URI="test_files%2Fcsv_splitter.py">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>O4UNSBPcp/8CS6KlktemkCGfouTHdLpRekgu9u0Q1uY=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant14.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>8pWIN+6EvPhuJjyq3y7UzkAQFqu347+UZiEN9TPfvKY=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant14_summary.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>H9oNpPsY9vfQwaijjZ8yCh2xACnQSi8OfAUeSDeiO4g=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant15.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>icbMhadhT/Lb66YdoRM+JTL/nCDiw2pG4rXmK0ojgC8=</DigestValue>
-</Reference>
-<Reference URI="test_files%2Fparticipant15_summary.csv">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BmhVRslpF33DSgRT8iDciGTcaTYgM514Q6E6ocHRKYU=</DigestValue>
 </Reference>
 <Reference URI="test_files%2Fstudy.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1603,11 +1619,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-aJrvOthi8qE84oywLz99DKqEFAl/uyPs2Z8a6XOdWUxvkwikzLsTFN767bB3eXRXSUtBHv8bIHVP
-8vwER1KXJgVBbJs0gQ5GachNcoEFQDmGrLxIEJpleLVnntCAemhgr+xWptivF8Y44uBUziRACuZB
-1n7VoJugMf3+Z1y8f9Lwz+CXop1OxgW5f8O8DNTyvtw/ooWLHdUFrdPx93cWYClVeQYwPGPPRUOy
-Sis3G9l0kH3tJ+dRQNQKeRrMTTuYKyOn1j64niNnYtcNDyta6Cu9gHXSZyHMvm37YF8SocSHW5d+
-94oBwp95Kgg8nKIcvM/57vN1DKz4bjzhY6ISuQ==
+Dc/+ORK6iAzD2Gv46BMx5e+rV1PBauVDMP3w6sqOnDQ3hnecK9OU02bs9aFfRT3AyUamqc4aooei
+paOLPrlhcseOkrC+gt9S/G+rXLH/UmUPohHRMiR86Y6ljEa3zqaVNB9q7lXf9bj29bPMQeSnMTFy
+Sg/X74bskRt0OgqSNgo9UtlouGNveuOOOflcyadZFmt9rlTKmz54xm49Y+70sjDG+K9MX5TWvo/F
+B92du9bjOnnx4OJOuta0N9HEByEng9K0xcQm5H/C1I15KNr7QXKoADIjJV7kqonDjw+brfqjl3SA
+8X1uXLS98JbE8iLR7kYXDcVO5SV9egnFpLF8uw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

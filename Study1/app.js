@@ -25,51 +25,51 @@ var currDate = Date.now();
 var ss_num = 0;
 var ss_menus;
 var imgPaths = 
-		//1
+		//1 frog, dog, fish, pigeon, cat, zebra, dolphin, penguin
 		[['icons/images/frog.png', 'icons/images/dog.png',
 		'icons/images/fish.png', 'icons/images/pigeon.png',
 		'icons/images/cat.png', 'icons/images/zebra.png',
 		'icons/images/dolphin.png', 'icons/images/penguin.png'],
-		//2
+		//2 grapes, lemon, kiwi. pineapple, strawberry, watermelon, peach, pear
 		['icons/images/grapes.png', 'icons/images/lemon.png',
 		'icons/images/kiwi.png', 'icons/images/pineapple.png',
 		'icons/images/strawberry.png', 'icons/images/watermelon.png',
 		'icons/images/peach.png', 'icons/images/pear.png'],
-		//3
+		//3 onion, cucumber, pumpkin, garlic, corn, broccoli, artichoke, carrot
 		['icons/images/onion.png', 'icons/images/cucumber.png',
 		'icons/images/pumpkin.png', 'icons/images/garlic.png',
 		'icons/images/corn.png', 'icons/images/broccoli.png',
 		'icons/images/artichoke.png', 'icons/images/carrot.png'],
-		//4
+		//4 baseball, hockey, basketball, tennis, darts, karate, pool, cards
 		['icons/images/baseball.png', 'icons/images/hockey.png',
 		'icons/images/basketball.png', 'icons/images/tennis.png',
 		'icons/images/darts.png', 'icons/images/karate.png',
 		'icons/images/pool.png', 'icons/images/cards.png'],
-		//5
+		//5 pepper, potato, mushroom, prune, lettuce, cherry, apple, banana
 		['icons/images/pepper.png', 'icons/images/potato.png',
 		'icons/images/mushroom.png', 'icons/images/prune.png',
 		'icons/images/lettuce.png', 'icons/images/cherry.png',
-		'icons/images/fish.png', 'icons/images/garlic.png'],
-		//6
+		'icons/images/apple.png', 'icons/images/banana.png'],
+		//6 bowtie, button, dress_shirt, gloves, skirt, socks, hat, sweater
 		['icons/images/bowtie.png', 'icons/images/button.png',
 		'icons/images/dress_shirt.png', 'icons/images/gloves.png',
 		'icons/images/skirt.png', 'icons/images/socks.png',
 		'icons/images/hat.png', 'icons/images/sweater.png'],
-		//7
+		//7 stapler, printer, pencil, trash, paperclip, envelope, keyboard, clock
 		['icons/images/stapler.png', 'icons/images/printer.png',
 		'icons/images/pencil.png', 'icons/images/trash.png',
 		'icons/images/paperclip.png', 'icons/images/envelope.png',
 		'icons/images/keyboard.png', 'icons/images/clock.png'],
-		//8
+		//8 stamp, rubikscube, dice, mouse, trousers, chess, telephone, chair
 		['icons/images/stamp.png', 'icons/images/rubikscube.png',
 		'icons/images/dice.png', 'icons/images/mouse.png',
-		'icons/images/darts.png', 'icons/images/chess.png',
+		'icons/images/trousers.png', 'icons/images/chess.png',
 		'icons/images/telephone.png', 'icons/images/chair.png'],
 		//9
-		['icons/images/mushroom.png', 'icons/images/fish.png',
-		'icons/images/lettuce.png', 'icons/images/pepper.png',
-		'icons/images/onion.png', 'icons/images/artichoke.png',
-		'icons/images/lemon.png', 'icons/images/broccoli.png']];
+		['icons/images/fa-scale.png', 'icons/images/fa-address.png',
+		'icons/images/fa-calculator.png', 'icons/images/fa-msg.png',
+		'icons/images/fa-bike.png', 'icons/images/fa-calendar.png',
+		'icons/images/fa-bolt.png', 'icons/images/fa-anchor.png']];
 
 var inTrial = false;
 var motorRotationConditions = [ 1, 2, 3 ];
