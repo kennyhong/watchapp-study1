@@ -7,12 +7,15 @@ var trials = [];
 var currCondition;
 var trialCount = 0;
 var conditionNum = 0;
+var efCondRepeat = 0;
 var documentsDir, dataFile, eventsFile;
-var isMenuVisable = true;
 var participantId = 0;
 var state;
 var failFeedback;
 var successFeedback;
+
+var eyesFree = true;
+var menuVisible = false;
 
 var num_cw = 0;
 var num_ccw = 0;
@@ -113,7 +116,7 @@ function setupStudy() {
 					dataFile.openStream("w", function(fs) {
 						fs.write("timestamp,participant_id,trial_number,block,motor_condition,visual_condition," +
 								"id_current_selection,current_selection,id_target_selection,target_selection," +
-								"event_type,x,y,angle,total_angle,num_+15,num_-15\n");
+								"event_type,x,y,angle,total_angle,num_+15,num_-15,is_eyes_free,is_menu_visible\n");
 						fs.close();
 					}, function(e) {
 						console.log("Error " + e.message);
@@ -127,7 +130,7 @@ function setupStudy() {
 					eventsFile.openStream("w", function(fs) {
 						fs.write("participant_id,trial_number,block,motor_condition,visual_condition," +
 								"id_current_selection,current_selection,id_target_selection,target_selection,target_angle," +
-								"selection_success,num_overshoots,selection_time,first_rotation_time,total_rotation_angle,num_+15,num_-15\n");
+								"selection_success,num_overshoots,selection_time,first_rotation_time,total_rotation_angle,num_+15,num_-15,is_eyes_free,is_menu_visible\n");
 						fs.close();
 					}, function(e) {
 						console.log("Error " + e.message);
@@ -150,6 +153,7 @@ function setupStudy() {
 										blockNum: splitContent[i].split(",")[5].replace(/(\r\n|\n|\r)/gm,""),
 										target: splitContent[i].split(",")[6].replace(/(\r\n|\n|\r)/gm,""),
 										trial: splitContent[i].split(",")[2].replace(/(\r\n|\n|\r)/gm,""),
+										eyesFreeCondition: true
 								}
 								trials[trialsSetupNum++] = trial;
 						}
@@ -209,7 +213,6 @@ function removeHighlight() {
 }
 
 function highLight(itemIndex, menus) {
-
 	if (itemIndex < menus.length && itemIndex > -1) {
 		// remove a previous highlight
 		removeHighlight();
@@ -242,7 +245,8 @@ function log(data) {
 					+ "visual_" + data.curr_visual + ","
 					+ data.selection_id + "," + currItem + "," + data.target_id
 					+ "," + targetItem + "," + data.event_type + "," + data.x
-					+ "," + data.y + "," + data.angle + "," + data.total_angle + "," + num_cw + "," + num_ccw + "\n");
+					+ "," + data.y + "," + data.angle + "," + data.total_angle + "," + num_cw + "," + num_ccw
+					+ "," + data.curr_ef + "," + menuVisible + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -283,7 +287,8 @@ function logSummary(data) {
 					+ "visual_" + data.curr_visual + ","
 					+ data.selection_id + "," + currItem + "," + data.target_id
 					+ "," + targetItem + "," + targetAngle + "," + data.success + "," + data.num_overshoots + "," + data.timestamp
-					 + "," + firstRotationTime + "," + data.angle + "," + data.num_pos15 + "," + data.num_neg15 + "\n");
+					+ "," + firstRotationTime + "," + data.angle + "," + data.num_pos15 + "," + data.num_neg15 
+					+ "," + data.curr_ef + "," + menuVisible + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -313,8 +318,8 @@ function clickEvent(event) {
 		target_id : trials[currTrial].target,
 		curr_motor: trials[currTrial].motorCondition,
 		curr_visual: trials[currTrial].visualCondition,
-		curr_block: trials[currTrial].blockNum
-		// curr_ef: trials[currTrial].eyesFreeCondition
+		curr_block: trials[currTrial].blockNum,
+		curr_ef: trials[currTrial].eyesFreeCondition
 	};
 	log(data);
 	console.log("timestamp: " + (Date.now() - currDate) + " type: "
@@ -329,7 +334,7 @@ function clickEvent(event) {
 
 function toggleTrial() {
 	if (state.innerHTML === "Start") {
-		rotationCount = 0;
+		rotationCount = -1;
 		num_cw = 0;
 		num_ccw = 0;
 		currDate = Date.now();
@@ -342,16 +347,23 @@ function toggleTrial() {
 		motorRotationCount = 0;
 		document.querySelector("#ss_menu").style.visibility = "visible";
 		highLight(rotationCount, ss_menus);
-//		if (conditions[trialSet].eyesFreeCondition === "true" || conditions[trialSet].eyesFreeCondition === "TRUE") {
-//			$('#ss_menu').hide();
-//			timeoutHandler = setTimeout(function () {$('#ss_menu').show()}, 1000);
-//		}
-		
+		if (trials[currTrial].eyesFreeCondition === "true" || trials[currTrial].eyesFreeCondition === "TRUE") {
+			$('#ss_menu').hide();
+		}
 	} else if (state.innerHTML !== "Start" && !inTrial) {
 		window.removeEventListener("rotarydetent", rotaryEventHandler);
 		if (currTrial < trials.length - 1) {
 			state.innerHTML = "Start";
-			conditionNum++;
+			if(trials[currTrial].eyesFreeCondition === "true" || trials[currTrial].eyesFreeCondition === "TRUE"){
+				if(efCondRepeat > 16) {
+					conditionNum++;
+					efCondRepeat = 0;
+				} else {
+					efCondRepeat++; 
+				}
+			} else {
+				conditionNum++;
+			}
 			currCondition.innerHTML = "Motor: " + trials[currTrial].motorCondition + " ticks";
 			document.querySelector("#target-img").style.visibility = "hidden";
 			$("#target-img").attr('src', '');
@@ -368,7 +380,7 @@ function toggleTrial() {
 
 function delayMenuAppearance() {
 	clearTimeout(timeoutHandler);
-	timeoutHandler = setTimeout(function () {$('#ss_menu').show()}, 1000);
+	timeoutHandler = setTimeout(function () {$('#ss_menu').show(); menuVisible = true}, 300);
 }
 
 function rotaryEventHandler(event) {
@@ -376,12 +388,12 @@ function rotaryEventHandler(event) {
 	direction = event.detail.direction;
 	var data;
 	var prevItem = '';
-	if(inTrial) {
-		delayMenuAppearance();
-	}
 	if(inTrial && !firstRotationBool) {
 		firstRotationTime = Date.now() - currDate;
+		timeoutHandler = setTimeout(function () {$('#ss_menu').show(); menuVisible = true}, 300);
 		firstRotationBool = true;
+	} else {
+		delayMenuAppearance();
 	}
 	if (direction === 'CW') {
 		num_cw++;
@@ -415,8 +427,8 @@ function rotaryEventHandler(event) {
 			target_id : trials[currTrial].target,
 			curr_motor: trials[currTrial].motorCondition,
 			curr_visual: trials[currTrial].visualCondition,
-			curr_block: trials[currTrial].blockNum
-			//curr_ef: conditions[trialSet].eyesFreeCondition
+			curr_block: trials[currTrial].blockNum,
+			curr_ef: trials[currTrial].eyesFreeCondition
 		};
 		log(data);
 		console.log("timestamp: " + (Date.now() - currDate) + " type: "
@@ -454,8 +466,8 @@ function rotaryEventHandler(event) {
 			target_id : trials[currTrial].target,
 			curr_motor: trials[currTrial].motorCondition,
 			curr_visual: trials[currTrial].visualCondition,
-			curr_block: trials[currTrial].blockNum
-			//curr_ef: conditions[trialSet].eyesFreeCondition
+			curr_block: trials[currTrial].blockNum,
+			curr_ef: trials[currTrial].eyesFreeCondition
 		};
 		log(data);
 		console.log("timestamp: " + (Date.now() - currDate) + " type: "
@@ -493,7 +505,6 @@ function setMenuLayout() {
 		var img = document.querySelectorAll("#menu-img");
 		img[ss_itr].src = imgPaths[conditionNum][ss_itr];
 	}
-
 }
 
 function hideMenu() {
@@ -537,8 +548,8 @@ function selectionCheck(clickX, clickY) {
 			curr_visual: trials[currTrial].visualCondition,
 			curr_block: trials[currTrial].blockNum,
 			num_pos15: num_cw,
-			num_neg15: num_ccw
-			//curr_ef: trials[currTrial].eyesFreeCondition
+			num_neg15: num_ccw,
+			curr_ef: trials[currTrial].eyesFreeCondition
 		};
 		logSummary(data);
 		iterateTarget();
@@ -560,8 +571,8 @@ function selectionCheck(clickX, clickY) {
 			curr_visual: trials[currTrial].visualCondition,
 			curr_block: trials[currTrial].blockNum,
 			num_pos15: num_cw,
-			num_neg15: num_ccw
-			//curr_ef: conditions[trialSet].eyesFreeCondition
+			num_neg15: num_ccw,
+			curr_ef: trials[currTrial].eyesFreeCondition
 		};
 		logSummary(data);
 		iterateTarget();
@@ -590,20 +601,6 @@ function iterateTarget() {
 	num_ccw = 0;
 	highLight(rotationCount, ss_menus);
 }
-//
-//function shuffleTargets() {
-//	var currentIndex = targetImagePaths.length, temporaryValue, randomIndex;
-//	
-//	while (0 !== currentIndex) {
-//
-//		randomIndex = Math.floor(Math.random() * currentIndex);
-//		currentIndex -= 1;
-//
-//		temporaryValue = targetImagePaths[currentIndex];
-//		targetImagePaths[currentIndex] = targetImagePaths[randomIndex];
-//		targetImagePaths[randomIndex] = temporaryValue;
-//	}
-//}
 
 window.onload = function() {
 	state = document.getElementById("trial-state");
