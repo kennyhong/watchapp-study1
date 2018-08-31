@@ -15,7 +15,7 @@ var failFeedback;
 var successFeedback;
 
 var eyesFree = true;
-var menuVisible = false;
+var menuVisible = true;
 
 var num_cw = 0;
 var num_ccw = 0;
@@ -144,9 +144,9 @@ function setupStudy() {
 				if (studyInfo) {
 					studyInfo.openStream('r', function(stream){
 						studyCSVContent = stream.read(stream.bytesAvailable);
-						var splitContent = studyCSVContent.split("\r");
+						var splitContent = studyCSVContent.split("\n");
 						console.log(splitContent.length);
-						for (var i = 1; i < splitContent.length; i++) {
+						for (var i = 1; i < splitContent.length - 1; i++) {
 								var trial = {
 										motorCondition: splitContent[i].split(",")[4].replace(/(\r\n|\n|\r)/gm,""), 
 										visualCondition: splitContent[i].split(",")[3].replace(/(\r\n|\n|\r)/gm,""),
@@ -304,9 +304,6 @@ function cleanImageFilePath(str) {
 }
 
 function clickEvent(event) {
-	if(inTrial) {
-		delayMenuAppearance();
-	}
 	var data = {
 		timestamp : Date.now() - currDate,
 		event_type : event.type,
@@ -334,7 +331,7 @@ function clickEvent(event) {
 
 function toggleTrial() {
 	if (state.innerHTML === "Start") {
-		rotationCount = -1;
+		rotationCount = 0;
 		num_cw = 0;
 		num_ccw = 0;
 		currDate = Date.now();
@@ -347,27 +344,19 @@ function toggleTrial() {
 		motorRotationCount = 0;
 		document.querySelector("#ss_menu").style.visibility = "visible";
 		highLight(rotationCount, ss_menus);
-		if (trials[currTrial].eyesFreeCondition === "true" || trials[currTrial].eyesFreeCondition === "TRUE") {
+		if (trials[currTrial].eyesFreeCondition == true) {
 			$('#ss_menu').hide();
+			menuVisible = false;
+			firstRotationBool = false;
 		}
 	} else if (state.innerHTML !== "Start" && !inTrial) {
 		window.removeEventListener("rotarydetent", rotaryEventHandler);
 		if (currTrial < trials.length - 1) {
 			state.innerHTML = "Start";
-			if(trials[currTrial].eyesFreeCondition === "true" || trials[currTrial].eyesFreeCondition === "TRUE"){
-				if(efCondRepeat > 16) {
-					conditionNum++;
-					efCondRepeat = 0;
-				} else {
-					efCondRepeat++; 
-				}
-			} else {
-				conditionNum++;
-			}
 			currCondition.innerHTML = "Motor: " + trials[currTrial].motorCondition + " ticks";
 			document.querySelector("#target-img").style.visibility = "hidden";
 			$("#target-img").attr('src', '');
-			hideMenu();
+			resetMenu();
 		} else {
 			document.querySelector("#target-img").style.visibility = "hidden";
 			hideMenu();
@@ -380,21 +369,13 @@ function toggleTrial() {
 
 function delayMenuAppearance() {
 	clearTimeout(timeoutHandler);
-	timeoutHandler = setTimeout(function () {$('#ss_menu').show(); menuVisible = true}, 300);
+	timeoutHandler = setTimeout(function () {$('#ss_menu').show(); menuVisible = true}, 500);
 }
 
 function rotaryEventHandler(event) {
-	let
-	direction = event.detail.direction;
+	let direction = event.detail.direction;
 	var data;
 	var prevItem = '';
-	if(inTrial && !firstRotationBool) {
-		firstRotationTime = Date.now() - currDate;
-		timeoutHandler = setTimeout(function () {$('#ss_menu').show(); menuVisible = true}, 300);
-		firstRotationBool = true;
-	} else {
-		delayMenuAppearance();
-	}
 	if (direction === 'CW') {
 		num_cw++;
 		if (motorRotationCount > -1 && !turnRight) {
@@ -404,6 +385,14 @@ function rotaryEventHandler(event) {
 		currAngle += 15;
 		motorRotationCount++;
 		if (motorRotationConditions[trials[currTrial].motorCondition - 1] == motorRotationCount) {
+			navigator.vibrate(50);
+			if(inTrial && !firstRotationBool) {
+				firstRotationTime = Date.now() - currDate;
+				timeoutHandler = setTimeout(function () {$('#ss_menu').show(); menuVisible = true}, 500);
+				firstRotationBool = true;
+			} else {
+				delayMenuAppearance();
+			}
 			if (rotationCount !== -1) {
 				prevItem = imgPaths[conditionNum][rotationCount];
 			}
@@ -442,6 +431,14 @@ function rotaryEventHandler(event) {
 		}
 		motorRotationCount++;
 		if (motorRotationConditions[trials[currTrial].motorCondition - 1] == motorRotationCount) {
+			navigator.vibrate(50);
+			if(inTrial && !firstRotationBool) {
+				firstRotationTime = Date.now() - currDate;
+				timeoutHandler = setTimeout(function () {$('#ss_menu').show(); menuVisible = true}, 500);
+				firstRotationBool = true;
+			} else {
+				delayMenuAppearance();
+			}
 			if (rotationCount !== -1) {
 				var prevItem = imgPaths[conditionNum][rotationCount];
 			}
@@ -555,7 +552,7 @@ function selectionCheck(clickX, clickY) {
 		iterateTarget();
 		motorRotationCount = 0;
 		overshoots = 0;
-		firstRotationBool = false;
+		clearTimeout(timeoutHandler);
 		// Log Selection Data
 	} else {
 		failFeedback.play();
@@ -575,26 +572,39 @@ function selectionCheck(clickX, clickY) {
 			curr_ef: trials[currTrial].eyesFreeCondition
 		};
 		logSummary(data);
-		iterateTarget();
 		motorRotationCount = 0;
 		overshoots = 0;
 		firstRotationBool = false;
+		clearTimeout(timeoutHandler);
+		rotationCount = 0;
+		highLight(rotationCount, ss_menus);
+		if (trials[currTrial].eyesFreeCondition == true) {
+			$('#ss_menu').hide();
+			menuVisible = false;
+			firstRotationBool = false;
+		}
 	}
 }
 	
 function iterateTarget() {
 	currTrial++;
 	if(trials[currTrial]){
-		if (trials[currTrial].blockNum == 1 && ((currTrial) % 64 == 0)) {
+		if ((currTrial % 8) == 0) {
 			inTrial = false;
+			resetMenu();
 		}
 		else {
 			$("#target-img").attr('src', imgPaths[conditionNum][trials[currTrial].target - 1]);
+			if (trials[currTrial].eyesFreeCondition == true) {
+				$('#ss_menu').hide();
+				menuVisible = false;
+				firstRotationBool = false;
+			}
 		}
 	} else {
 		inTrial = false;
+		resetMenu();
 	}
-	
 	removeHighlight();
 	rotationCount = 0;
 	num_cw = 0;
