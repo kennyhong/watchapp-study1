@@ -393,6 +393,8 @@ function toggleTrial() {
 		window.addEventListener("rotarydetent", rotaryEventHandler);
 		state.innerHTML = "";
 		inTrial = true;
+		$('#ss_menu').show();
+		resetMenu();
 		setMenuLayout();
 		loadTarget();
 		motorRotationCount = 0;
@@ -408,9 +410,9 @@ function toggleTrial() {
 		if (currTrial < trials.length - 1) {
 			state.innerHTML = "Start";
 			currCondition.innerHTML = "Motor: " + trials[currTrial].motorCondition + " ticks";
-			resetMenu();
 			document.querySelector("#target-img").style.visibility = "hidden";
 			$("#target-img").attr('src', '');
+			$('#ss_menu').hide();
 		} else {
 			document.querySelector("#target-img").style.visibility = "hidden";
 			hideMenu();
@@ -591,7 +593,7 @@ function tutorialRotaryEventHandler(event) {
 		if (motorRotationConditions[trials[currTrial].motorCondition - 1] == motorRotationCount) {
 			navigator.vibrate(50);
 			if(inTrial && !firstRotationBool) {
-				firstRotationTime = Date.now() - currDate;
+				firstRotationTime= Date.now() - currDate;
 				timeoutHandler = setTimeout(function () {$('#ss_menu').show(); menuVisible = true}, 750);
 				firstRotationBool = true;
 			} else {
@@ -610,7 +612,7 @@ function tutorialRotaryEventHandler(event) {
 			motorRotationCount = 0;
 		}
 		currAngle -= 15;
-		data = {
+		data = { 
 			timestamp : Date.now() - currDate,
 			event_type : "rotary",
 			x : 0,
@@ -651,9 +653,12 @@ function setMenuLayout() {
 	for (var ss_itr = 0; ss_itr < ss_menus.length; ss_itr++) {
 		let
 		ss_menu = ss_menus[ss_itr];
-		ss_menu.style.top = 40
+		ss_menu.style.top = page_center_y - ss_menu.getBoundingClientRect().top
+				- ss_menu.getBoundingClientRect().height / 2 - page_radius
 				* Math.cos(ss_seg_ang * ss_itr) + 'px';
-		ss_menu.style.left = 310
+		ss_menu.style.left = page_center_x
+				- ss_menu.getBoundingClientRect().left
+				- ss_menu.getBoundingClientRect().width / 2 + page_radius
 				* Math.sin(ss_seg_ang * ss_itr) + 'px';
 		var img = document.querySelectorAll("#menu-img");
 		img[ss_itr].src = imgPaths[conditionNum][ss_itr];
@@ -669,8 +674,13 @@ function setTutorialMenuLayout() {
 	for (var ss_itr = 0; ss_itr < ss_menus.length; ss_itr++) {
 		let
 		ss_menu = ss_menus[ss_itr];
-		ss_menu.style.top = 40 * Math.cos(ss_seg_ang * ss_itr) + 'px';
-		ss_menu.style.left = 170 * Math.sin(ss_seg_ang * ss_itr) + 'px';
+		ss_menu.style.top = page_center_y - ss_menu.getBoundingClientRect().top
+				- ss_menu.getBoundingClientRect().height / 2 - page_radius
+				* Math.cos(ss_seg_ang * ss_itr) + 'px';
+		ss_menu.style.left = page_center_x
+				- ss_menu.getBoundingClientRect().left
+				- ss_menu.getBoundingClientRect().width / 2 + page_radius
+				* Math.sin(ss_seg_ang * ss_itr) + 'px';
 		var img = document.querySelectorAll("#menu-img");
 		img[ss_itr].src = imgPaths[1][ss_itr];
 	}
@@ -829,7 +839,7 @@ function iterateTarget() {
 	if(trials[currTrial]){
 		if ((currTrial % 8) == 0) {
 			inTrial = false;
-			$('#ss-menu').show();
+			$('#ss_menu').show();
 		}
 		else {
 			$("#target-img").attr('src', imgPaths[conditionNum][trials[currTrial].target - 1]);
@@ -841,7 +851,7 @@ function iterateTarget() {
 		}
 	} else {
 		inTrial = false;
-		$('#ss-menu').show();
+		$('#ss_menu').show();
 	}
 	removeHighlight();
 	rotationCount = 0;
@@ -856,8 +866,7 @@ function iterateTutorial() {
 		if ((currTraining % 8) == 0) {
 			inTrial = false;
 			isTraining = false;
-			$('#ss-menu').show();
-			resetMenu();
+			$('#ss_menu').show();
 		}
 		else {
 			$("#target-img").attr('src', imgPaths[1][trainingTargets[currTraining] - 1]);
@@ -870,8 +879,7 @@ function iterateTutorial() {
 	} else {
 		inTrial = false;
 		isTraining = false;
-		$('#ss-menu').show();
-		resetMenu();
+		$('#ss_menu').show();
 		window.removeEventListener("rotarydetent", tutorialRotaryEventHandler);
 	}
 	removeHighlight();
