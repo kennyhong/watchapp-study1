@@ -229,6 +229,8 @@ function highLight(itemIndex, menus) {
 function log(data) {
 	var currItem;
 	var targetItem;
+	var currMenuVis = menuVisible;
+	var trainingBool = isTraining;
 
 	if (isTraining && inTrial) {
 		if (rotationCount > -1) {
@@ -263,7 +265,7 @@ function log(data) {
 					+ data.selection_id + "," + currItem + "," + data.target_id
 					+ "," + targetItem + "," + data.event_type + "," + data.x
 					+ "," + data.y + "," + data.angle + "," + data.total_angle + "," + num_cw + "," + num_ccw
-					+ "," + menuVisible + "," + isTraining + "\n");
+					+ "," + currMenuVis + "," + trainingBool + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -275,6 +277,10 @@ function logSummary(data) {
 	var currItem;
 	var targetItem;
 	var targetAngle;
+	var currMenuVis = menuVisible;
+	var trainingBool = isTraining;
+	
+	console.log(isTraining + ":" + menuVisible);
 	
 	if(trials[currTrial].visualCondition == 1) {
 		targetAngle = (data.target_id - 1) * 15;
@@ -317,7 +323,7 @@ function logSummary(data) {
 					+ data.selection_id + "," + currItem + "," + data.target_id
 					+ "," + targetItem + "," + targetAngle + "," + data.success + "," + data.num_overshoots + "," + data.timestamp
 					+ "," + firstRotationTime + "," + data.angle + "," + data.num_pos15 + "," + data.num_neg15 
-					+ "," + menuVisible + "," + isTraining + "\n");
+					+ "," + currMenuVis + "," + trainingBool + "\n");
 			fs.close();
 		}, function(e) {
 			console.log("Error " + e.message);
@@ -369,7 +375,6 @@ function toggleTrial() {
 		window.addEventListener("rotarydetent", tutorialRotaryEventHandler);
 		state.innerHTML = "";
 		inTrial = true;
-		resetMenu();
 		setTutorialMenuLayout();
 		loadTutorialTarget();
 		motorRotationCount = 0;
@@ -388,7 +393,6 @@ function toggleTrial() {
 		window.addEventListener("rotarydetent", rotaryEventHandler);
 		state.innerHTML = "";
 		inTrial = true;
-		resetMenu();
 		setMenuLayout();
 		loadTarget();
 		motorRotationCount = 0;
@@ -404,6 +408,7 @@ function toggleTrial() {
 		if (currTrial < trials.length - 1) {
 			state.innerHTML = "Start";
 			currCondition.innerHTML = "Motor: " + trials[currTrial].motorCondition + " ticks";
+			resetMenu();
 			document.querySelector("#target-img").style.visibility = "hidden";
 			$("#target-img").attr('src', '');
 		} else {
@@ -639,18 +644,16 @@ function checkOvershoot(prevItem) {
 function setMenuLayout() {
 	ss_menus = document.querySelectorAll('#ss_menu > div');
 	ss_num = ss_menus.length;
+	var docOffset = document.body.getBoundingClientRect();
 	var ss_seg_ang = visualConditions[trials[currTrial].visualCondition - 1];
 	var page_center_x = 180, page_center_y = 180, page_radius = 130;
 	console.log(ss_menu.getBoundingClientRect().top+":"+ss_menu.getBoundingClientRect().height+":"+ss_menu.getBoundingClientRect().left+":"+ss_menu.getBoundingClientRect().width);
 	for (var ss_itr = 0; ss_itr < ss_menus.length; ss_itr++) {
 		let
 		ss_menu = ss_menus[ss_itr];
-		ss_menu.style.top = page_center_y - ss_menu.getBoundingClientRect().top
-				- ss_menu.getBoundingClientRect().height / 2 - page_radius
+		ss_menu.style.top = 40
 				* Math.cos(ss_seg_ang * ss_itr) + 'px';
-		ss_menu.style.left = page_center_x
-				- ss_menu.getBoundingClientRect().left
-				- ss_menu.getBoundingClientRect().width / 2 + page_radius
+		ss_menu.style.left = 310
 				* Math.sin(ss_seg_ang * ss_itr) + 'px';
 		var img = document.querySelectorAll("#menu-img");
 		img[ss_itr].src = imgPaths[conditionNum][ss_itr];
@@ -666,13 +669,8 @@ function setTutorialMenuLayout() {
 	for (var ss_itr = 0; ss_itr < ss_menus.length; ss_itr++) {
 		let
 		ss_menu = ss_menus[ss_itr];
-		ss_menu.style.top = page_center_y - ss_menu.getBoundingClientRect().top
-				- ss_menu.getBoundingClientRect().height / 2 - page_radius
-				* Math.cos(ss_seg_ang * ss_itr) + 'px';
-		ss_menu.style.left = page_center_x
-				- ss_menu.getBoundingClientRect().left
-				- ss_menu.getBoundingClientRect().width / 2 + page_radius
-				* Math.sin(ss_seg_ang * ss_itr) + 'px';
+		ss_menu.style.top = 40 * Math.cos(ss_seg_ang * ss_itr) + 'px';
+		ss_menu.style.left = 170 * Math.sin(ss_seg_ang * ss_itr) + 'px';
 		var img = document.querySelectorAll("#menu-img");
 		img[ss_itr].src = imgPaths[1][ss_itr];
 	}
@@ -735,9 +733,6 @@ function selectionCheck(clickX, clickY) {
 		motorRotationCount = 0;
 		overshoots = 0;
 		clearTimeout(timeoutHandler);
-		if(!inTrial) {
-			resetMenu();
-		}
 		// Log Selection Data
 	} else {
 		failFeedback.play();
@@ -796,9 +791,6 @@ function tutSelectionCheck(clickX, clickY) {
 		motorRotationCount = 0;
 		overshoots = 0;
 		clearTimeout(timeoutHandler);
-		if(!inTrial) {
-			resetMenu();
-		}
 		// Log Selection Data
 	} else {
 		failFeedback.play();
@@ -837,7 +829,7 @@ function iterateTarget() {
 	if(trials[currTrial]){
 		if ((currTrial % 8) == 0) {
 			inTrial = false;
-			resetMenu();
+			$('#ss-menu').show();
 		}
 		else {
 			$("#target-img").attr('src', imgPaths[conditionNum][trials[currTrial].target - 1]);
@@ -849,7 +841,7 @@ function iterateTarget() {
 		}
 	} else {
 		inTrial = false;
-		resetMenu();
+		$('#ss-menu').show();
 	}
 	removeHighlight();
 	rotationCount = 0;
@@ -864,6 +856,7 @@ function iterateTutorial() {
 		if ((currTraining % 8) == 0) {
 			inTrial = false;
 			isTraining = false;
+			$('#ss-menu').show();
 			resetMenu();
 		}
 		else {
@@ -877,6 +870,7 @@ function iterateTutorial() {
 	} else {
 		inTrial = false;
 		isTraining = false;
+		$('#ss-menu').show();
 		resetMenu();
 		window.removeEventListener("rotarydetent", tutorialRotaryEventHandler);
 	}
