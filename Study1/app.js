@@ -735,6 +735,9 @@ function selectionCheck(clickX, clickY) {
 		motorRotationCount = 0;
 		overshoots = 0;
 		clearTimeout(timeoutHandler);
+		if(!inTrial) {
+			resetMenu();
+		}
 		// Log Selection Data
 	} else {
 		failFeedback.play();
@@ -793,8 +796,7 @@ function tutSelectionCheck(clickX, clickY) {
 		motorRotationCount = 0;
 		overshoots = 0;
 		clearTimeout(timeoutHandler);
-		if (currTraining == trainingTargets.length) {
-			isTraining = false;
+		if(!inTrial) {
 			resetMenu();
 		}
 		// Log Selection Data
@@ -861,6 +863,8 @@ function iterateTutorial() {
 	if(trainingTargets[currTraining]){
 		if ((currTraining % 8) == 0) {
 			inTrial = false;
+			isTraining = false;
+			resetMenu();
 		}
 		else {
 			$("#target-img").attr('src', imgPaths[1][trainingTargets[currTraining] - 1]);
@@ -872,6 +876,8 @@ function iterateTutorial() {
 		}
 	} else {
 		inTrial = false;
+		isTraining = false;
+		resetMenu();
 		window.removeEventListener("rotarydetent", tutorialRotaryEventHandler);
 	}
 	removeHighlight();
